@@ -2,37 +2,132 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Creatures We Are - Eng Wiki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Story Wiki</title>
     
-    <!-- React and ReactDOM -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- React and ReactDOM (use production versions) -->
+    <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
     
-    <!-- Babel -->
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- Babel with specific version -->
+    <script src="https://unpkg.com/@babel/standalone@7.22.17/babel.min.js"></script>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Error handling -->
+    <script>
+        window.onerror = function(msg, url, lineNo, columnNo, error) {
+            console.error('Error: ' + msg + '\nURL: ' + url + '\nLine: ' + lineNo + '\nColumn: ' + columnNo + '\nError object: ' + JSON.stringify(error));
+            // Display error to user
+            const root = document.getElementById('root');
+            if (root) {
+                root.innerHTML = `
+                    <div style="padding: 20px; color: red;">
+                        <h2>Something went wrong</h2>
+                        <p>Please try refreshing the page. If the problem persists, please check the console for more details.</p>
+                    </div>
+                `;
+            }
+            return false;
+        };
+    </script>
+
+    <!-- Initial loading state -->
+    <style>
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #root:empty::after {
+            content: "Loading...";
+            display: block;
+            text-align: center;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div id="root"></div>
+    <!-- Loading state container -->
+    <div id="root">
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
+            <p>Loading Story Wiki...</p>
+        </div>
+    </div>
 
     <!-- Load Wiki Component -->
-    <script type="text/babel" src="wiki.js"></script>
+    <script type="text/babel" data-type="module" src="wiki.js"></script>
 
-    <!-- Mount Component -->
+    <!-- Mount Component with error handling -->
     <script type="text/babel">
+        // Error Boundary Component
+        class ErrorBoundary extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = { hasError: false };
+            }
+
+            static getDerivedStateFromError(error) {
+                return { hasError: true };
+            }
+
+            componentDidCatch(error, errorInfo) {
+                console.error('Error caught by boundary:', error, errorInfo);
+            }
+
+            render() {
+                if (this.state.hasError) {
+                    return (
+                        <div style={{ padding: '20px', color: 'red' }}>
+                            <h2>Something went wrong</h2>
+                            <p>Please try refreshing the page.</p>
+                        </div>
+                    );
+                }
+                return this.props.children;
+            }
+        }
+
         // Wait for component to load
-        window.onload = () => {
+        window.addEventListener('load', () => {
             try {
                 const root = ReactDOM.createRoot(document.getElementById('root'));
-                root.render(<WikiSpoilerSystem />);
+                root.render(
+                    <ErrorBoundary>
+                        <WikiSpoilerSystem />
+                    </ErrorBoundary>
+                );
                 console.log("Wiki mounted successfully");
             } catch (error) {
                 console.error("Error mounting wiki:", error);
+                document.getElementById('root').innerHTML = `
+                    <div style="padding: 20px; color: red;">
+                        <h2>Failed to load Story Wiki</h2>
+                        <p>Error: ${error.message}</p>
+                        <p>Please try refreshing the page.</p>
+                    </div>
+                `;
             }
-        };
+        });
     </script>
 </body>
 </html>
