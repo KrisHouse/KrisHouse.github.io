@@ -1,10 +1,8 @@
 # Chapter-Based Story Wiki
 
-A web-based wiki system that reveals content based on the reader's progress through chapters, preventing spoilers.
+A web-based wiki system that reveals content based on the reader's progress through chapters, preventing spoilers. Features both light and dark modes, with full search capabilities and mobile responsiveness.
 
-## Current Implementation
-
-### Project Structure
+## Project Structure
 ```
 story-wiki/
 ├── index.html
@@ -12,27 +10,59 @@ story-wiki/
 └── styles.css
 ```
 
-### Features Implemented
+## Features Implemented
 - Chapter-based content revelation
-- Category tabs (Characters, Factions)
-- Detailed entry views with sections
-- Tag system
-- Basic styling with Tailwind CSS
+  - Users input their last read chapter
+  - Content automatically filters based on progress
+  - Visual indicators for locked content
 
-### How It Works
-1. Readers input the latest chapter they've read
+- Category System
+  - Characters
+  - Factions
+  - Abilities/Talents
+  - Mysteries/Plot Points
+  - Locations
+  - Items/Artifacts
+
+- Advanced Search Functionality
+  - Global search across all categories
+  - Category-specific search
+  - Tag-based filtering
+  - Real-time search results
+  - Search through titles, summaries, and content
+
+- User Interface
+  - Dark/Light mode toggle
+  - System theme preference detection
+  - Mobile-responsive design
+  - Clean, modern UI with smooth transitions
+  - Tag-based navigation
+  - Detailed entry views with sections
+
+- Content Organization
+  - Hierarchical content structure
+  - Tag system for cross-referencing
+  - Chapter-gated sections within entries
+  - Category icons for better visual recognition
+
+## How It Works
+1. Users input their current chapter progress
 2. Content is filtered based on chapter progress
-3. Entries show basic info in list view
-4. Detailed view shows chapter-gated sections
+3. Users can search and filter content using:
+   - Text search
+   - Tag filters
+   - Category navigation
+4. Content is presented in both list and detailed views
+5. Dark/Light mode adjusts based on user preference
 
-### Current Data Structure
+## Data Structure
 ```javascript
-const wikiContent = {
-    characters: [
+{
+    categoryName: [
         {
-            id: "character-id",
+            id: "unique-id",
             chapter: 1,
-            title: "Character Name",
+            title: "Entry Title",
             summary: "Brief description",
             tags: ["tag1", "tag2"],
             sections: [
@@ -47,41 +77,37 @@ const wikiContent = {
 }
 ```
 
-## Setup Instructions
-1. Create the three files in a directory
-2. Open with VS Code
-3. Install Live Server extension
-4. Right-click index.html and select "Open with Live Server"
-
-## Planned Features
-1. Search Functionality
-   - Global search across all categories
-   - Filter by tags
-   - Chapter-aware search results
-
-2. Additional Categories
-   - Talents/Abilities
-   - Mysteries/Plot Points
-   - Locations
-   - Items/Artifacts
-
-3. Enhanced Entry Relationships
-   - Cross-references between entries
-   - Related entries section
-   - Timeline view
-
-4. UI Improvements
-   - Dark mode
-   - Responsive design for mobile
-   - Better navigation
-
-5. Content Management
-   - Data file separation
-   - Better content organization
-   - Import/export capabilities
-
-## Technical Notes
-- Uses plain JavaScript with React loaded via CDN
-- Tailwind CSS for styling
+## Technical Details
+- Built with React (loaded via CDN)
+- Styled with Tailwind CSS
 - No build tools required
-- Babel for JSX transformation
+- Uses Babel for JSX transformation
+
+## Future Enhancements
+1. Data Management
+   - JSON/markdown data file support
+   - Import/export capabilities
+   - Content versioning
+
+2. Enhanced Features
+   - Timeline view
+   - Character relationship diagrams
+   - Image support
+   - Auto-save reading progress
+
+3. User Accounts
+   - Progress tracking
+   - Bookmarks
+   - Notes and annotations
+   - Multiple reading paths
+
+4. Cross-References
+   - Automatic link generation
+   - Related entries suggestions
+   - Context-aware references
+
+5. Advanced Visualization
+   - Family trees
+   - Location maps
+   - Event timelines
+   - Power scales

@@ -194,7 +194,7 @@ function WikiSpoilerSystem() {
                 chapter: 263,
                 title: "Time-Space Spirit",
                 summary: "The top Time-Space-type Talent.",
-                tags: ["Talent", "Time-Space"],
+                tags: ["Talent", "Miracle"],
                 sections: [
                     {
                         title: "Basic mechanisms",
@@ -223,132 +223,7 @@ function WikiSpoilerSystem() {
                     },
                 ]
               },
-              4: {
-                id: 4,
-                chapter: 380,
-                title: "Elemental",
-                summary: "The top Element-type Talent.",
-                tags: ["Talent", "Element"],
-                sections: [
-                    {
-                    title: "Basic Mechanism",
-                    chapter: 380,
-                    content: "Allows the manipulation of multiple elements and the combination of them to form new elements."
-                    },
-                    {
-                    title: "Level 8",
-                    chapter: 381,
-                    content: "At level 8, Elemental grants an ultimate skill: Elemental Angel."
-                    },
-                ]
-              },
-              5: {
-                id: 5,
-                chapter: 255,
-                title: "Prophet",
-                summary: "The top Knowledge-type Talent.",
-                tags: ["Talent", "Knowledge"],
-                sections: [
-                    {
-                    title: "Basic Abilities",
-                    chapter: 255,
-                    content: "Prophet sees the immediate future in ten seconds, senses an incoming danger in the near future, or gives a prophetic dream glimpsing into fate."
-                    },
-                    {
-                    title: "Fate Slides",
-                    chapter: 961,
-                    content: "Once a contract is formed with a target, the user may glimpse their near future from one to ten days ahead."
-                    },
-                ]
-              },
-              6: {
-                id: 6,
-                chapter: 304,
-                title: "Limitless Evolution",
-                summary: "The top Buff-type Talent.",
-                tags: ["Talent", "Buff"],
-                sections: [
-                    {
-                    title: "Basic Mechanism",
-                    chapter: 304,
-                    content: "Whenever a Talent fails to kill the user, they gain a 60% immunity and resistance to it after recovery and acquire a small part of the Talent's energy."
-                    },
-                ]
-              },
-              7: {
-                id: 7,
-                chapter: 245,
-                title: "Puppeteer",
-                summary: "The top Summon-type Talent.",
-                tags: ["Talent", "Summon"],
-                sections: [
-                    {
-                    title: "Basic Mechanism",
-                    chapter: 249,
-                    content: "Can turn a wanderer or a corpse into a puppet. The puppets' skills can also be used by the Talent user for a period of time."
-                    },
-                    {
-                    title: "Skill Conversion",
-                    chapter: 249,
-                    content: "Can turn a wanderer or a corpse into a puppet."
-                    },
-                ]
-              },
-              8: {
-                id: 8,
-                chapter: 372,
-                title: "Pestilence",
-                summary: "The top Poison-type Talent.",
-                tags: ["Talent", "Poison"],
-                sections: []
-              },
-              9: {
-                id: 9,
-                chapter: 336,
-                title: "Absolute Defense",
-                summary: "The top Guard-type Talent.",
-                tags: ["Talent", "Guard"],
-                sections: [
-                    {
-                    title: "Basic Mechanism",
-                    chapter: 336,
-                    content: "The Talent grants energy shields of different types and Absolute Barriers. There can only be one large Absolute Barrier at a time or three small Absolute Barriers. The barriers last 10 minutes with a cooldown of 1 hour. Nothing may enter the barriers or make any in-depth investigation into something in the barriers. Whether the ones in the barriers may leave the barriers is decided by the Talent user."
-                },]
-              },
-              10: {
-                id: 10,
-                chapter: 361,
-                title: "Equivalent Exchange",
-                summary: "The top Life-type Talent.",
-                tags: ["Talent", "Miracle"],
-                sections: [
-                    {
-                    title: "Basic Mechanism",
-                    chapter: 373,
-                    content: "Create a gray sphere and bring judgments to targets inside the domain. It seems quite physically-taxing to the user."
-                },]
-              },
-              11: {
-                id: 11,
-                chapter: 72,
-                title: "Killing Expert",
-                summary: "The top Damage-type Talent.",
-                tags: ["Talent", "Damage"],
-                sections: [
-                    {
-                    title: "Basic Mechanism",
-                    chapter: 72,
-                    content: "Mastery over all physical techniques, martial arts, and the use of all cold weapons and firearms for the purpose of killing. Pain sensitivity is lowered to 10% in battle, and physical abilities are enhanced the more seriously one is injured. When on the verge of death, all stats are buffed."
-                },]
-              },
-              12: {
-                id: 12,
-                chapter: 238,
-                title: "House",
-                summary: "The top Support-type Talent.",
-                tags: ["Talent", "Support"],
-                sections: []
-              },
+              // ... other talents
             }
           },
         mysteries: [
@@ -783,47 +658,35 @@ function WikiSpoilerSystem() {
         const filteredTalents = [];
         
         for (let i = 1; i <= 199; i++) {
-            const talent = talents[i];
-            
-            // If no talent exists for this number, add it as an undiscovered entry
-            if (!talent) {
-                filteredTalents.push({ number: i, data: null });
-                continue;
-            }
-            
-            // Process tags for this talent
-            const processedTags = getEntryTags(talent.tags);
-            
-            // Check if talent matches search term
-            const matchesSearch = !searchTerm || 
-                talent.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                talent.summary.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                processedTags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
-            
-            // Check if talent matches selected tags
-            const matchesTags = selectedTags.length === 0 ||
-                selectedTags.every(tag => processedTags.includes(tag));
-            
-            // Only add to filtered list if matches both search and tags
-            if ((!searchTerm && !selectedTags.length) || (matchesSearch && matchesTags)) {
-                filteredTalents.push({ number: i, data: talent });
-            }
+          const talent = talents[i];
+          if (!talent || !searchTerm) {
+            filteredTalents.push({ number: i, data: talent });
+            continue;
+          }
+          
+          if (
+            talent.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            talent.summary.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            talent.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+          ) {
+            filteredTalents.push({ number: i, data: talent });
+          }
         }
     
         return (
-            <div className="divide-y dark:divide-gray-700">
-                {filteredTalents.map(({ number, data }) => (
-                    <TalentListItem
-                        key={number}
-                        number={number}
-                        data={data}
-                        currentChapter={currentChapter}
-                        onSelect={setSelectedEntry}
-                    />
-                ))}
-            </div>
+          <div className="divide-y dark:divide-gray-700">
+            {filteredTalents.map(({ number, data }) => (
+              <TalentListItem
+                key={number}
+                number={number}
+                data={data}
+                currentChapter={currentChapter}
+                onSelect={setSelectedEntry}
+              />
+            ))}
+          </div>
         );
-    };
+      };
 
       const renderRegularEntry = (entry) => {
         // Guard clause to prevent rendering undefined entries
