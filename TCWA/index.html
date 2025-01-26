@@ -2,59 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Story Wiki</title>
     
-    <!-- React and ReactDOM (use production versions) -->
+    <!-- React and ReactDOM (specific versions, production build) -->
     <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
     
-    <!-- Babel with specific version -->
-    <script src="https://unpkg.com/@babel/standalone@7.22.17/babel.min.js"></script>
+    <!-- Babel (specific version) -->
+    <script src="https://unpkg.com/@babel/standalone@7.21.4/babel.min.js"></script>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Error handling -->
-    <script>
-        window.onerror = function(msg, url, lineNo, columnNo, error) {
-            console.error('Error: ' + msg + '\nURL: ' + url + '\nLine: ' + lineNo + '\nColumn: ' + columnNo + '\nError object: ' + JSON.stringify(error));
-            // Display error to user
-            const root = document.getElementById('root');
-            if (root) {
-                root.innerHTML = `
-                    <div style="padding: 20px; color: red;">
-                        <h2>Something went wrong</h2>
-                        <p>Please try refreshing the page. If the problem persists, please check the console for more details.</p>
-                    </div>
-                `;
-            }
-            return false;
-        };
-    </script>
-
-    <!-- Initial loading state -->
+    <!-- Loading state styles -->
     <style>
-        .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #3498db;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        #root:empty::after {
-            content: "Loading...";
-            display: block;
-            text-align: center;
-            padding: 20px;
-            font-family: system-ui, -apple-system, sans-serif;
-        }
         .loading-container {
             display: flex;
             flex-direction: column;
@@ -62,72 +24,80 @@
             justify-content: center;
             min-height: 100vh;
             padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 16px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <!-- Loading state container -->
     <div id="root">
         <div class="loading-container">
             <div class="loading-spinner"></div>
-            <p>Loading Story Wiki...</p>
+            <div>Loading Story Wiki...</div>
         </div>
     </div>
 
     <!-- Load Wiki Component -->
-    <script type="text/babel" data-type="module" src="wiki.js"></script>
-
-    <!-- Mount Component with error handling -->
     <script type="text/babel">
-        // Error Boundary Component
-        class ErrorBoundary extends React.Component {
-            constructor(props) {
-                super(props);
-                this.state = { hasError: false };
-            }
-
-            static getDerivedStateFromError(error) {
-                return { hasError: true };
-            }
-
-            componentDidCatch(error, errorInfo) {
-                console.error('Error caught by boundary:', error, errorInfo);
-            }
-
-            render() {
-                if (this.state.hasError) {
-                    return (
-                        <div style={{ padding: '20px', color: 'red' }}>
-                            <h2>Something went wrong</h2>
-                            <p>Please try refreshing the page.</p>
-                        </div>
-                    );
-                }
-                return this.props.children;
-            }
-        }
-
-        // Wait for component to load
-        window.addEventListener('load', () => {
-            try {
-                const root = ReactDOM.createRoot(document.getElementById('root'));
-                root.render(
-                    <ErrorBoundary>
-                        <WikiSpoilerSystem />
-                    </ErrorBoundary>
-                );
+        // Load the wiki.js content first
+        fetch('wiki.js')
+            .then(response => response.text())
+            .then(code => {
+                // Execute the code to define WikiSpoilerSystem
+                eval(Babel.transform(code, { presets: ['react'] }).code);
+                
+                // Then mount the component
+                const rootElement = document.getElementById('root');
+                const root = ReactDOM.createRoot(rootElement);
+                root.render(React.createElement(WikiSpoilerSystem));
                 console.log("Wiki mounted successfully");
-            } catch (error) {
-                console.error("Error mounting wiki:", error);
+            })
+            .catch(error => {
+                console.error("Error loading wiki:", error);
                 document.getElementById('root').innerHTML = `
                     <div style="padding: 20px; color: red;">
                         <h2>Failed to load Story Wiki</h2>
                         <p>Error: ${error.message}</p>
-                        <p>Please try refreshing the page.</p>
+                        <button onclick="location.reload()" style="padding: 8px 16px; background: #e53e3e; color: white; border-radius: 4px; margin-top: 12px;">
+                            Retry
+                        </button>
+                    </div>
+                `;
+            });
+    </script>
+
+    <!-- Error handling -->
+    <script>
+        window.onerror = function(msg, url, lineNo, columnNo, error) {
+            console.error('Error:', { msg, url, lineNo, columnNo, error });
+            const rootElement = document.getElementById('root');
+            if (rootElement) {
+                rootElement.innerHTML = `
+                    <div style="padding: 20px; color: red;">
+                        <h2>Something went wrong</h2>
+                        <p>${msg}</p>
+                        <button onclick="location.reload()" style="padding: 8px 16px; background: #e53e3e; color: white; border-radius: 4px; margin-top: 12px;">
+                            Retry
+                        </button>
                     </div>
                 `;
             }
-        });
+            return false;
+        };
     </script>
 </body>
 </html>
