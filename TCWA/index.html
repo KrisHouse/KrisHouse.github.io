@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Creatures We Are - Eng Wiki</title>
+    
+    <!-- React and ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+    <!-- Babel -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- Load Wiki Component -->
+    <script type="text/babel" src="wiki.js"></script>
+
+    <!-- Mount Component -->
+    <script type="text/babel">
+        // Wait for component to load
+        window.onload = () => {
+            try {
+                const root = ReactDOM.createRoot(document.getElementById('root'));
+                root.render(<WikiSpoilerSystem />);
+                console.log("Wiki mounted successfully");
+            } catch (error) {
+                console.error("Error mounting wiki:", error);
+            }
+        };
+    </script>
+</body>
+</html>
