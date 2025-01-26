@@ -468,7 +468,6 @@ function WikiSpoilerSystem() {
     };
 
     const isMobile = useIsMobile();
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const [currentChapter, setCurrentChapter] = React.useState(1);
     const [inputChapter, setInputChapter] = React.useState('');
@@ -478,10 +477,6 @@ function WikiSpoilerSystem() {
     const [showGlobalSearch, setShowGlobalSearch] = React.useState(false);
     const [selectedTags, setSelectedTags] = React.useState([]);
     const [darkMode, setDarkMode] = React.useState(false);
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
 
     // Event Handlers
     const handleChapterSubmit = React.useCallback((e) => {
@@ -944,68 +939,69 @@ function WikiSpoilerSystem() {
             }`}>
                 Story Wiki
             </h1>
-            <div className="flex items-center gap-2">
-                {isMobile && !selectedEntry && (
-                    <button
-                        onClick={toggleMenu}
-                        className={`p-2 rounded ${
-                            darkMode 
-                                ? 'bg-gray-700 text-white hover:bg-gray-600' 
-                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                        }`}
-                    >
-                        {isMenuOpen ? '✕' : '☰'}
-                    </button>
-                )}
-                <button
-                    onClick={handleDarkModeToggle}
-                    className={`p-2 rounded-full ${
-                        darkMode 
-                            ? 'bg-gray-700 text-yellow-300 hover:bg-gray-600' 
-                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                    }`}
-                >
-                    {darkMode ? '☀️' : '🌙'}
-                </button>
-            </div>
+            <button
+                onClick={handleDarkModeToggle}
+                className={`p-2 rounded-full ${
+                    darkMode 
+                        ? 'bg-gray-700 text-yellow-300 hover:bg-gray-600' 
+                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+            >
+                {darkMode ? '☀️' : '🌙'}
+            </button>
         </div>
     );
     
-    const renderNavigation = () => (
-        <div className={`${
-            isMobile && !isMenuOpen && !selectedEntry ? 'hidden' : 'block'
-        } mb-6 overflow-x-auto`}>
-            <div className={`${
-                isMobile ? 'flex flex-col' : 'flex'
-            } border-b ${
-                darkMode ? 'border-gray-700' : 'border-gray-200'
-            }`}>
-                {Object.keys(wikiContent).map((tab) => (
-                    <button
-                        key={tab}
-                        className={`px-4 py-2 flex items-center gap-2 ${
-                            isMobile ? 'border-b dark:border-gray-700' : ''
-                        } ${
-                            activeTab === tab 
-                                ? darkMode
-                                    ? 'border-blue-500 text-blue-400 bg-gray-700'
-                                    : 'border-blue-500 text-blue-600 bg-gray-50'
-                                : darkMode
-                                    ? 'text-gray-400 hover:text-blue-400 hover:bg-gray-700'
-                                    : 'text-gray-600 hover:text-blue-500 hover:bg-gray-50'
+    const renderNavigation = () => {
+        if (isMobile) {
+            return (
+                <div className="mb-6">
+                    <select 
+                        value={activeTab}
+                        onChange={(e) => handleTabChange(e.target.value)}
+                        className={`w-full p-2 rounded border ${
+                            darkMode 
+                                ? 'bg-gray-700 border-gray-600 text-white' 
+                                : 'bg-white border-gray-300 text-gray-900'
                         }`}
-                        onClick={() => {
-                            handleTabChange(tab);
-                            if (isMobile) setIsMenuOpen(false);
-                        }}
                     >
-                        <span>{getCategoryIcon(tab)}</span>
-                        <span>{tab.charAt(0).toUpperCase() + tab.slice(1)}</span>
-                    </button>
-                ))}
+                        {Object.keys(wikiContent).map((tab) => (
+                            <option key={tab} value={tab}>
+                                {getCategoryIcon(tab)} {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+            );
+        }
+    
+        return (
+            <div className="mb-6 overflow-x-auto">
+                <div className={`flex border-b ${
+                    darkMode ? 'border-gray-700' : 'border-gray-200'
+                }`}>
+                    {Object.keys(wikiContent).map((tab) => (
+                        <button
+                            key={tab}
+                            className={`px-4 py-2 flex items-center gap-2 whitespace-nowrap ${
+                                activeTab === tab 
+                                    ? darkMode
+                                        ? 'border-b-2 border-blue-500 text-blue-400'
+                                        : 'border-b-2 border-blue-500 text-blue-600'
+                                    : darkMode
+                                        ? 'text-gray-400 hover:text-blue-400'
+                                        : 'text-gray-600 hover:text-blue-500'
+                            }`}
+                            onClick={() => handleTabChange(tab)}
+                        >
+                            <span>{getCategoryIcon(tab)}</span>
+                            <span>{tab.charAt(0).toUpperCase() + tab.slice(1)}</span>
+                        </button>
+                    ))}
+                </div>
             </div>
-        </div>
-    );
+        );
+    };
     
     const renderEntryGrid = () => {
         // If showing selected entry, render that instead
@@ -1062,9 +1058,7 @@ function WikiSpoilerSystem() {
                         </div>
                     </form>
     
-                    <div className={`text-sm mb-4 ${
-                        darkMode ? 'text-gray-300' : 'text-gray-600'
-                    }`}>
+                    <div className={`text-sm mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                         Showing content up to Chapter {currentChapter}
                     </div>
     
