@@ -110,7 +110,7 @@ function WikiSpoilerSystem() {
                     {
                         title: "Background",
                         chapter: 1,
-                        content: "Gao Yang, originally an orphan named Liu Li, transmigrated to the world the story takes place at the age of six.",
+                        content: "Gao Yang, originally an orphan named Liu Li, transmigrated to the world the story takes place at the age of six.\nHis birthday is on 4/1.",
                         subsections: [] // Simple section without subsections
                     },
                     {
@@ -167,7 +167,7 @@ function WikiSpoilerSystem() {
                 chapter: 32,
                 title: "Twelve Zodiac Signs",
                 summary: "The Twelve Zodiac Signs consists of a small number of awakeners. The members' codenames follow the theme of the Chinese Zodiac Signs: Mouse, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Lamb, Monkey, Rooster, Dog, and Pig.",
-                tags: ["awakener org"],
+                tags: ["awakener", "faction"],
                 sections: [
                     {
                         title: "History",
@@ -195,27 +195,17 @@ function WikiSpoilerSystem() {
                 id: 1,
                 chapter: 336,
                 title: "Overlord",
-                summary: "The top Miracle-type Talent.",
+                summary: "The top Miracle-type Talent. Create a gray sphere and bring judgments to targets inside the domain. It seems quite physically-taxing to the user.",
                 tags: ["Talent", "Miracle"],
-                sections: [
-                    {
-                    title: "Basic Mechanism",
-                    chapter: 373,
-                    content: "Create a gray sphere and bring judgments to targets inside the domain. It seems quite physically-taxing to the user."
-                },]
+                sections: []
               },
               2: {
                 id: 2,
                 chapter: 263,
                 title: "Eidos",
-                summary: "The top Psyche-type Talent.",
+                summary: "The top Psyche-type Talent. Allows one to create powerful illusion, delusion, and illusory realm through eye contact. Allows one to invade the target’s mind in order to disturb, influence, and even manipulate their rationality, emotions, and memories.",
                 tags: ["Talent", "Psyche"],
                 sections: [
-                    {
-                        title: "Basic mechanisms",
-                        chapter: 263,
-                        content: "Allows one to create powerful illusion, delusion, and illusory realm through eye contact. Allows one to invade the target’s mind in order to disturb, influence, and even manipulate their rationality, emotions, and memories."
-                    },
                     {
                         title: "Brain Formatting",
                         chapter: 608,
@@ -242,14 +232,9 @@ function WikiSpoilerSystem() {
                 id: 3,
                 chapter: 263,
                 title: "Time-Space Spirit",
-                summary: "The top Time-Space-type Talent.",
+                summary: "The top Time-Space-type Talent. Allows one to manipulate and jump time and space.",
                 tags: ["Talent", "Time-Space"],
                 sections: [
-                    {
-                        title: "Basic mechanisms",
-                        chapter: 379,
-                        content: "It allows one to jump through time and space. The user may manipulate time for themselves so that they are relatively much faster than others. It can also create a subspace to trap people."
-                    },
                     {
                         title: "Spirit Domain",
                         chapter: 1039,
@@ -268,7 +253,12 @@ function WikiSpoilerSystem() {
                     {
                         title: "Time-Space Gap",
                         chapter: 1039,
-                        content: "Trap targets temporarily with risk of permanent loss in Time-Space gap.."
+                        content: "Trap targets temporarily with risk of permanent loss in Time-Space gap."
+                    },
+                    {
+                        title: "Time Travel",
+                        chapter: 1039,
+                        content: "The Talent user may travel through time and space with the possibility of returning to the same location but not the same period (not within 12 hours). Cooldown: 365 days."
                     },
                 ]
               },
@@ -276,14 +266,9 @@ function WikiSpoilerSystem() {
                 id: 4,
                 chapter: 380,
                 title: "Elemental",
-                summary: "The top Element-type Talent.",
+                summary: "The top Element-type Talent. Allows the manipulation of multiple elements and the combination of them to form new elements.",
                 tags: ["Talent", "Element"],
                 sections: [
-                    {
-                    title: "Basic Mechanism",
-                    chapter: 380,
-                    content: "Allows the manipulation of multiple elements and the combination of them to form new elements."
-                    },
                     {
                     title: "Level 8",
                     chapter: 381,
@@ -295,14 +280,9 @@ function WikiSpoilerSystem() {
                 id: 5,
                 chapter: 255,
                 title: "Prophet",
-                summary: "The top Knowledge-type Talent.",
+                summary: "The top Knowledge-type Talent. Sees the immediate future in ten seconds, senses an incoming danger in the near future, or gives a prophetic dream glimpsing into fate.",
                 tags: ["Talent", "Knowledge"],
                 sections: [
-                    {
-                    title: "Basic Abilities",
-                    chapter: 255,
-                    content: "Prophet sees the immediate future in ten seconds, senses an incoming danger in the near future, or gives a prophetic dream glimpsing into fate."
-                    },
                     {
                     title: "Fate Slides",
                     chapter: 961,
@@ -314,32 +294,21 @@ function WikiSpoilerSystem() {
                 id: 6,
                 chapter: 304,
                 title: "Limitless Evolution",
-                summary: "The top Buff-type Talent.",
+                summary: "The top Buff-type Talent. Whenever a Talent fails to kill the user, they gain a 60% immunity and resistance to it after recovery and acquire a small part of the Talent's energy.",
                 tags: ["Talent", "Buff"],
-                sections: [
-                    {
-                    title: "Basic Mechanism",
-                    chapter: 304,
-                    content: "Whenever a Talent fails to kill the user, they gain a 60% immunity and resistance to it after recovery and acquire a small part of the Talent's energy."
-                    },
-                ]
+                sections: []
               },
               7: {
                 id: 7,
                 chapter: 245,
                 title: "Puppeteer",
-                summary: "The top Summon-type Talent.",
+                summary: "The top Summon-type Talent. Can be used to contract and manipulate weak lifeforms like wanderers.",
                 tags: ["Talent", "Summon"],
                 sections: [
                     {
-                    title: "Basic Mechanism",
+                    title: "Level 4",
                     chapter: 249,
-                    content: "Can turn a wanderer or a corpse into a puppet. The puppets' skills can also be used by the Talent user for a period of time."
-                    },
-                    {
-                    title: "Skill Conversion",
-                    chapter: 249,
-                    content: "Can turn a wanderer or a corpse into a puppet."
+                    content: "Can turn a corpse into a puppet. The puppets' skills can also be used by the Talent user for a period of time."
                     },
                 ]
               },
@@ -347,7 +316,7 @@ function WikiSpoilerSystem() {
                 id: 8,
                 chapter: 372,
                 title: "Pestilence",
-                summary: "The top Poison-type Talent.",
+                summary: "The top Poison-type Talent. Allows one to manipulate poison, using poisonous wind to kill.",
                 tags: ["Talent", "Poison"],
                 sections: []
               },
@@ -355,14 +324,9 @@ function WikiSpoilerSystem() {
                 id: 9,
                 chapter: 336,
                 title: "Absolute Defense",
-                summary: "The top Guard-type Talent.",
+                summary: "The top Guard-type Talent. The Talent grants energy shields of different types and Absolute Barriers. There can only be one large Absolute Barrier at a time or three small Absolute Barriers. The barriers last 10 minutes with a cooldown of 1 hour. Nothing may enter the barriers or make any in-depth investigation into something in the barriers. Whether the ones in the barriers may leave the barriers is decided by the Talent user.",
                 tags: ["Talent", "Guard"],
-                sections: [
-                    {
-                    title: "Basic Mechanism",
-                    chapter: 336,
-                    content: "The Talent grants energy shields of different types and Absolute Barriers. There can only be one large Absolute Barrier at a time or three small Absolute Barriers. The barriers last 10 minutes with a cooldown of 1 hour. Nothing may enter the barriers or make any in-depth investigation into something in the barriers. Whether the ones in the barriers may leave the barriers is decided by the Talent user."
-                },]
+                sections: []
               },
               10: {
                 id: 10,
@@ -372,23 +336,28 @@ function WikiSpoilerSystem() {
                 tags: ["Talent", "Miracle"],
                 sections: [
                     {
-                    title: "Basic Mechanism",
-                    chapter: 373,
-                    content: "Create a gray sphere and bring judgments to targets inside the domain. It seems quite physically-taxing to the user."
-                },]
+                    title: "Active Abilities",
+                    chapter: 361,
+                    content: "1. Buff user for a short time at the price of exhausting the energy of their future self.\n\
+                    2. Heal user or others at the price of exhausting part of their energy.\n\
+                    3. Interrogate bodies at the price of exhausting part of their energy.\n\
+                    4. Resurrect bodies at the price of exhausting all their energy."
+                    },
+                    {
+                    title: "Passive Abilities",
+                    chapter: 361,
+                    content: "1. Grants incredible regenerative power.\n\
+                    2. Preserve 12 months worth of energy at the most."
+                    },
+                ]
               },
               11: {
                 id: 11,
                 chapter: 72,
                 title: "Killing Expert",
-                summary: "The top Damage-type Talent.",
+                summary: "The top Damage-type Talent. Grants mastery over all physical techniques, martial arts, and the use of all cold weapons and firearms for the purpose of killing. Pain sensitivity is lowered to 10% in battle, and physical abilities are enhanced the more seriously one is injured. When on the verge of death, all stats are buffed.",
                 tags: ["Talent", "Damage"],
-                sections: [
-                    {
-                    title: "Basic Mechanism",
-                    chapter: 72,
-                    content: "Mastery over all physical techniques, martial arts, and the use of all cold weapons and firearms for the purpose of killing. Pain sensitivity is lowered to 10% in battle, and physical abilities are enhanced the more seriously one is injured. When on the verge of death, all stats are buffed."
-                },]
+                sections: []
               },
               12: {
                 id: 12,
@@ -423,8 +392,8 @@ function WikiSpoilerSystem() {
             {
                 id: "levelups",
                 chapter: 55,
-                title: "Ways to Level Up",
-                summary: "How a Talent levels up.",
+                title: "Level Ups",
+                summary: "How Talents level up.",
                 tags: ["Talent, worldbuilding"],
                 sections: [
                     {
@@ -776,7 +745,7 @@ function WikiSpoilerSystem() {
             </h3>
             {section.chapter <= currentChapter ? (
                 <div>
-                    <p className={`mt-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <p className={`mt-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'} whitespace-pre-wrap`}>
                         {section.content}
                     </p>
                     {section.subsections && section.subsections.length > 0 && (
