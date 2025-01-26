@@ -5,32 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Story Wiki</title>
     
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
-    
     <!-- React and ReactDOM -->
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     
-    <!-- Babel for JSX -->
+    <!-- Babel -->
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <div id="root"></div>
-    
-    <!-- Your React component -->
+
+    <!-- Load Wiki Component -->
     <script type="text/babel" src="wiki.js"></script>
-    
-    <!-- Mount the app -->
+
+    <!-- Mount Component -->
     <script type="text/babel">
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<WikiSpoilerSystem />);
+        // Wait for component to load
+        window.onload = () => {
+            try {
+                const root = ReactDOM.createRoot(document.getElementById('root'));
+                root.render(<WikiSpoilerSystem />);
+                console.log("Wiki mounted successfully");
+            } catch (error) {
+                console.error("Error mounting wiki:", error);
+            }
+        };
     </script>
 </body>
 </html>
