@@ -47,6 +47,40 @@ const TalentListItem = ({ number, data, currentChapter, onSelect }) => {
     );
 };
 
+// BackButton component with fixed related entry handling
+const BackButton = ({ selectedEntry, handleBackToList, darkMode }) => {
+    // Get the related category content safely
+    const getRelatedEntry = () => {
+        if (!selectedEntry || !selectedEntry.category) return null;
+        
+        const categoryContent = wikiContent[selectedEntry.category];
+        if (!categoryContent) return null;
+
+        // Handle talents category differently
+        if (selectedEntry.category === 'talents') {
+            return categoryContent.data[selectedEntry.id] || null;
+        }
+
+        // For other categories
+        return Array.isArray(categoryContent) 
+            ? categoryContent.find(e => e.id === selectedEntry.id)
+            : null;
+    };
+
+    return (
+        <button 
+            onClick={handleBackToList}
+            className={`m-4 px-4 py-2 rounded flex items-center gap-2 transition-colors ${
+                darkMode 
+                    ? 'bg-gray-700 hover:bg-gray-600 text-gray-200' 
+                    : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+            }`}
+        >
+            ← Back to List
+        </button>
+    );
+};
+
 function WikiSpoilerSystem() {
     // Previous wikiContent data stays the same
     const wikiContent = {
@@ -741,16 +775,11 @@ function WikiSpoilerSystem() {
 
     const renderDetailedEntry = (entry) => (
         <div className={`rounded-lg shadow-md ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
-            <button 
-                onClick={handleBackToList}
-                className={`m-4 px-4 py-2 rounded flex items-center gap-2 transition-colors ${
-                    darkMode 
-                        ? 'bg-gray-700 hover:bg-gray-600 text-gray-200' 
-                        : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
-                }`}
-            >
-                ← Back to List
-            </button>
+            <BackButton 
+                selectedEntry={entry}
+                handleBackToList={handleBackToList}
+                darkMode={darkMode}
+            />
 
             <div className="p-6">
                 <div className="flex items-center gap-2 text-gray-500 mb-2">
