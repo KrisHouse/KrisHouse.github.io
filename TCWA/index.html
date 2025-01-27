@@ -5,17 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Story Wiki</title>
     
-    <!-- React and ReactDOM (specific versions, production build) -->
     <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-    
-    <!-- Babel (specific version) -->
     <script src="https://unpkg.com/@babel/standalone@7.21.4/babel.min.js"></script>
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Loading state styles -->
     <style>
         .loading-container {
             display: flex;
@@ -26,7 +20,6 @@
             padding: 20px;
             font-family: system-ui, -apple-system, sans-serif;
         }
-        
         .loading-spinner {
             width: 40px;
             height: 40px;
@@ -36,7 +29,6 @@
             animation: spin 1s linear infinite;
             margin-bottom: 16px;
         }
-        
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -51,53 +43,51 @@
         </div>
     </div>
 
-    <!-- Load Wiki Component -->
     <script type="text/babel">
-        // Load the wiki.js content first
-        fetch('wiki.js')
-            .then(response => response.text())
-            .then(code => {
-                // Execute the code to define WikiSpoilerSystem
+        // First, load all content
+        Promise.all([
+            fetch('content/characters.js').then(r => r.text()),
+            fetch('content/factions.js').then(r => r.text()),
+            fetch('content/talents.js').then(r => r.text()),
+            fetch('content/mysteries.js').then(r => r.text()),
+            fetch('content/locations.js').then(r => r.text()),
+            fetch('content/items.js').then(r => r.text())
+        ]).then(([characters, factions, talents, mysteries, locations, items]) => {
+            // Process each file
+            const processContent = (code, key) => {
+                const module = { exports: {} };
                 eval(Babel.transform(code, { presets: ['react'] }).code);
-                
-                // Then mount the component
-                const rootElement = document.getElementById('root');
-                const root = ReactDOM.createRoot(rootElement);
-                root.render(React.createElement(WikiSpoilerSystem));
-                console.log("Wiki mounted successfully");
-            })
-            .catch(error => {
-                console.error("Error loading wiki:", error);
-                document.getElementById('root').innerHTML = `
-                    <div style="padding: 20px; color: red;">
-                        <h2>Failed to load Story Wiki</h2>
-                        <p>Error: ${error.message}</p>
-                        <button onclick="location.reload()" style="padding: 8px 16px; background: #e53e3e; color: white; border-radius: 4px; margin-top: 12px;">
-                            Retry
-                        </button>
-                    </div>
-                `;
-            });
-    </script>
+                return module.exports[key];
+            };
 
-    <!-- Error handling -->
-    <script>
-        window.onerror = function(msg, url, lineNo, columnNo, error) {
-            console.error('Error:', { msg, url, lineNo, columnNo, error });
-            const rootElement = document.getElementById('root');
-            if (rootElement) {
-                rootElement.innerHTML = `
-                    <div style="padding: 20px; color: red;">
-                        <h2>Something went wrong</h2>
-                        <p>${msg}</p>
-                        <button onclick="location.reload()" style="padding: 8px 16px; background: #e53e3e; color: white; border-radius: 4px; margin-top: 12px;">
-                            Retry
-                        </button>
-                    </div>
-                `;
-            }
-            return false;
-        };
+            // Create content object
+            const wikiContent = {
+                characters: processContent(characters, 'characters'),
+                factions: processContent(factions, 'factions'),
+                talents: processContent(talents, 'talents'),
+                mysteries: processContent(mysteries, 'mysteries'),
+                locations: processContent(locations, 'locations'),
+                items: processContent(items, 'items')
+            };
+
+            // Then load the wiki system
+            fetch('wiki.js')
+                .then(response => response.text())
+                .then(code => {
+                    eval(Babel.transform(code, { presets: ['react'] }).code);
+                    const root = ReactDOM.createRoot(document.getElementById('root'));
+                    root.render(React.createElement(window.WikiSpoilerSystem, { content: wikiContent }));
+                });
+        }).catch(error => {
+            console.error("Error:", error);
+            document.getElementById('root').innerHTML = `
+                <div style="padding: 20px; color: red;">
+                    <h2>Failed to load Story Wiki</h2>
+                    <p>Error: ${error.message}</p>
+                    <button onclick="location.reload()">Retry</button>
+                </div>
+            `;
+        });
     </script>
 </body>
 </html>
