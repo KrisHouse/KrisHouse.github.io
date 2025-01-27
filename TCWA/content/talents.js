@@ -175,29 +175,41 @@ module.exports.talents = {
         title: "House",
         summary: "The top Support-type Talent.",
         tags: ["Talent", "Support"],
-        sections: []
+        sections: [
+            {
+                title: "Basic Mechanism",
+                chapter: 362,
+                content: "Trap a target within ten meters and force them to gamble five times with the user. The user makes the rules, and their winning rate is 51%."
+            }
+        ]
         },
         13: {
-        id: 13,
-        chapter: 237,
-        title: "Phantom",
-        summary: "Element-type Talent with shadow manipulation abilities.",
-        tags: ["Talent", "Element"],
-        sections: []
+            id: 13,
+            chapter: 237,
+            title: "Phantom",
+            summary: "Manipulates shadow for offense or defense.",
+            tags: ["Talent", "Element"],
+            sections: []
         },
         14: {
             id: 14,
             chapter: 52,
             title: "Spatial Dissection",
-            summary: "Time-Space-type Talent that allows for precise spatial manipulation.",
+            summary: "Allows one to cut space.",
             tags: ["Talent", "Time-Space"],
-            sections: []
+            sections: [
+                {
+                    title: "Spatial Shards",
+                    chapter: 501,
+                    content: "Break space into pieces. Heavenly Dog used the attack against Zhuang Mei."
+                }
+            ]
         },
         15: {
             id: 15,
             chapter: 363,
             title: "Light",
-            summary: "Element-type Talent that controls light energy.",
+            summary: "Manipulates light for offense or defense.",
             tags: ["Talent", "Element"],
             sections: []
         },
@@ -205,31 +217,74 @@ module.exports.talents = {
             id: 16,
             chapter: 520,
             title: "Gamer",
-            summary: "Support-type Talent that applies game-like mechanics to reality.",
-            tags: ["Talent", "Support"],
-            sections: []
+            summary: "Makes saves and load saves to reset everything/everyone to a previous state.",
+            tags: ["Talent", "Miracle"],
+            sections: [
+                {
+                    title: "Time Reset",
+                    chapter: 648,
+                    content: "Reset a marked place and all living beings in it or reset a marked person. Resetting the user themselves is unlimited, while a place or a person can only be reset for a limited number of times."
+                }
+            ]
         },
         17: {
             id: 17,
             chapter: 303,
             title: "Petrify",
-            summary: "Element-type Talent that can turn targets to stone.",
-            tags: ["Talent", "Element"],
+            summary: "Turns a target into stone.",
+            tags: ["Talent", "Psyche"],
             sections: []
         },
         18: {
             id: 18,
             chapter: 27,
             title: "Replicate",
-            summary: "A Talent that allows the user to create copies.",
-            tags: ["Talent", "Summon"],
-            sections: []
+            summary: "Allows the user to replicate a Talent.",
+            tags: ["Talent", "Knowledge"],
+            sections: [
+                {
+                    title: "Level 1",
+                    chapter: 27,
+                    content: "Allows one to replicate 1 Talent from number 30-189. Storage Duration: 1 hour. Use Duration: 3 seconds. Cooldown: 12 hours."
+                },
+                {
+                    title: "Level 2",
+                    chapter: 39,
+                    content: "Allows one to replicate 1 Talent after number 22-189. Storage Duration: 3 hours. Use Duration: 10 seconds. Cooldown: 8 hours."
+                },
+                {
+                    title: "Level 3",
+                    chapter: 143,
+                    content: "Allows one to replicate 1 Talent after number 20-189. Storage Duration: 4.5 hours. Use Duration: 15 seconds. Cooldown: 7 hours."
+                },
+                {
+                    title: "Level 4",
+                    chapter: 324,
+                    content: "Allows one to replicate 1 Talent after number 15-189. Storage Duration: 5 hours. Use Duration: 20 seconds. Cooldown: 6 hours."
+                },
+                {
+                    title: "Level 5",
+                    chapter: 386,
+                    content: "Allows one to replicate 2 Talent after number 10-189. Storage Duration: 8 hours. Use Duration: 20 seconds. Cooldown: 4 hours."
+                },
+                {
+                    title: "Level 6",
+                    chapter: 510,
+                    content: "Allows one to replicate 3 Talent after number 10-189. Storage Duration: 50 hours. Use Duration: 20 seconds. Cooldown: 4 hours."
+                },
+                {
+                    title: "Level 7",
+                    chapter: 971,
+                    content: "Allows one to replicate 3 Talent after number 10-189. Storage Duration: 3 days. Use Duration: 60 seconds. Cooldown: 3 hours.\n\
+                    Grants Evanescent Omnireplication: replicates any of the 199 Talents and even abilities that belongs to someone other than awakeners. Storage Duration: 2 hours. One-time use. Cooldown: 3 days."
+                }
+            ]
         },
         19: {
             id: 19,
             chapter: 94,
             title: "Teleportation",
-            summary: "Time-Space-type Talent enabling instant movement between locations.",
+            summary: "Teleports.",
             tags: ["Talent", "Time-Space"],
             sections: []
         },
@@ -237,7 +292,7 @@ module.exports.talents = {
             id: 20,
             chapter: 7,
             title: "Metal",
-            summary: "Element-type Talent for controlling metal.",
+            summary: "Manipulates metal.",
             tags: ["Talent", "Element"],
             sections: []
         },
@@ -245,7 +300,7 @@ module.exports.talents = {
             id: 21,
             chapter: 164,
             title: "Weak Point",
-            summary: "A Damage-type Talent for exploiting vulnerabilities.",
+            summary: "Exponentially increases the offense power by hitting a target in the same spot.",
             tags: ["Talent", "Damage"],
             sections: []
         },
@@ -253,7 +308,7 @@ module.exports.talents = {
             id: 22,
             chapter: 81,
             title: "Detonation",
-            summary: "An Element-type Talent with explosive capabilities.",
+            summary: "Marking an object or a lifeform before detonating them.",
             tags: ["Talent", "Element"],
             sections: []
         },
@@ -261,7 +316,7 @@ module.exports.talents = {
             id: 23,
             chapter: 67,
             title: "Lightning",
-            summary: "An Element-type Talent controlling electricity.",
+            summary: "Manipulates electricity.",
             tags: ["Talent", "Element"],
             sections: []
         },
@@ -269,7 +324,7 @@ module.exports.talents = {
             id: 24,
             chapter: 51,
             title: "Injury Transfer",
-            summary: "A Life-type Talent that transfers injuries.",
+            summary: "Transfer damage from or to a target. Also allows the user to store a great amount of damage for some time.",
             tags: ["Talent", "Life"],
             sections: []
         },
@@ -277,7 +332,7 @@ module.exports.talents = {
             id: 25,
             chapter: 245,
             title: "Frost",
-            summary: "An Element-type Talent controlling ice and cold.",
+            summary: "Manipulates frost.",
             tags: ["Talent", "Element"],
             sections: []
         },
@@ -285,7 +340,7 @@ module.exports.talents = {
             id: 26,
             chapter: 49,
             title: "Fire",
-            summary: "An Element-type Talent manipulating fire.",
+            summary: "Manipulates fire.",
             tags: ["Talent", "Element"],
             sections: []
         },
@@ -293,7 +348,7 @@ module.exports.talents = {
             id: 27,
             chapter: 216,
             title: "Gale",
-            summary: "An Element-type Talent controlling wind.",
+            summary: "Manipualtes wind.",
             tags: ["Talent", "Element"],
             sections: []
         },
@@ -301,7 +356,7 @@ module.exports.talents = {
             id: 28,
             chapter: 358,
             title: "Earth",
-            summary: "An Element-type Talent controlling earth and soil.",
+            summary: "Manipulates earth.",
             tags: ["Talent", "Element"],
             sections: []
         },
@@ -309,7 +364,7 @@ module.exports.talents = {
             id: 29,
             chapter: 52,
             title: "Fly",
-            summary: "A Time-Space-type Talent enabling flight.",
+            summary: "Allows flying.",
             tags: ["Talent", "Time-Space"],
             sections: []
         },
@@ -317,7 +372,7 @@ module.exports.talents = {
             id: 30,
             chapter: 271,
             title: "Shapeshifter",
-            summary: "A Life-type Talent for transformation.",
+            summary: "Allows the transformation of appearance.",
             tags: ["Talent", "Life"],
             sections: []
         },
@@ -325,7 +380,7 @@ module.exports.talents = {
             id: 31,
             chapter: 327,
             title: "Gravity",
-            summary: "A Time-Space-type Talent controlling gravitational forces.",
+            summary: "Manipulates gravity.",
             tags: ["Talent", "Time-Space"],
             sections: []
         },
@@ -333,7 +388,7 @@ module.exports.talents = {
             id: 32,
             chapter: 7,
             title: "God of Blades",
-            summary: "A Damage-type Talent specializing in blade mastery.",
+            summary: "Grants one mastery over all bladed weapons and increases damage.",
             tags: ["Talent", "Damage"],
             sections: []
         },
@@ -341,7 +396,7 @@ module.exports.talents = {
             id: 33,
             chapter: 560,
             title: "God of Water",
-            summary: "An Element-type Talent with mastery over water.",
+            summary: "Manipulates water.",
             tags: ["Talent", "Element"],
             sections: []
         },
@@ -349,7 +404,7 @@ module.exports.talents = {
             id: 34,
             chapter: 610,
             title: "Plant",
-            summary: "An Element-type Talent controlling plant life.",
+            summary: "Manipulates plants.",
             tags: ["Talent", "Element"],
             sections: []
         },
@@ -357,7 +412,7 @@ module.exports.talents = {
             id: 35,
             chapter: 394,
             title: "Scale",
-            summary: "A Support-type Talent with scaling abilities.",
+            summary: "Allows one to increase or decrease their size.",
             tags: ["Talent", "Support"],
             sections: []
         },
@@ -365,7 +420,7 @@ module.exports.talents = {
             id: 36,
             chapter: 292,
             title: "One-inch Punch",
-            summary: "A Damage-type Talent focusing on concentrated force.",
+            summary: "Allows one to make a powerful attack with a light tap of their fist.",
             tags: ["Talent", "Damage"],
             sections: []
         },
@@ -373,7 +428,7 @@ module.exports.talents = {
             id: 37,
             chapter: 142,
             title: "Invisibility",
-            summary: "A Support-type Talent granting invisibility.",
+            summary: "Allows one to go invisible.",
             tags: ["Talent", "Support"],
             sections: []
         },
@@ -381,7 +436,7 @@ module.exports.talents = {
             id: 38,
             chapter: 629,
             title: "Three Heads Six Arms",
-            summary: "A Guard-type Talent manifesting additional appendages.",
+            summary: "Allows one to merge with two other people to combine their strengths with a slight buff to their defense. However, lack of coordination may cause chaos.",
             tags: ["Talent", "Guard"],
             sections: []
         },
@@ -389,7 +444,7 @@ module.exports.talents = {
             id: 39,
             chapter: 642,
             title: "Venom",
-            summary: "A Poison-type Talent utilizing toxins.",
+            summary: "Allows one to secrete poison.",
             tags: ["Talent", "Poison"],
             sections: []
         },
@@ -397,7 +452,7 @@ module.exports.talents = {
             id: 40,
             chapter: 655,
             title: "Mirror Man",
-            summary: "A Time-Space-type Talent with mirror-based abilities.",
+            summary: "Allows one to hide in and jump between mirror surfaces.",
             tags: ["Talent", "Time-Space"],
             sections: []
         },
@@ -405,7 +460,7 @@ module.exports.talents = {
             id: 41,
             chapter: 7,
             title: "God of Firearms",
-            summary: "A Damage-type Talent specializing in firearms.",
+            summary: "Mastery over all firearms with increased damage, accuracy, and speed.",
             tags: ["Talent", "Damage"],
             sections: []
         },
@@ -413,7 +468,7 @@ module.exports.talents = {
             id: 42,
             chapter: 142,
             title: "Gecko",
-            summary: "A Life-type Talent.",
+            summary: "Allows one to walk on walls, regenerate limbs, and see in the dark.",
             tags: ["Talent", "Life"],
             sections: []
         },
@@ -421,7 +476,7 @@ module.exports.talents = {
             id: 43,
             chapter: 728,
             title: "Specialized Guard",
-            summary: "A Guard-type Talent.",
+            summary: "Increases two types of defense while lowering one.",
             tags: ["Talent", "Guard"],
             sections: []
         },
@@ -429,7 +484,7 @@ module.exports.talents = {
             id: 44,
             chapter: 645,
             title: "Memory Tailor",
-            summary: "A Psyche-type Talent.",
+            summary: "Modifies memories.",
             tags: ["Talent", "Psyche"],
             sections: []
         },
@@ -437,7 +492,7 @@ module.exports.talents = {
             id: 45,
             chapter: 11,
             title: "Healilng",
-            summary: "A Life-type Talent.",
+            summary: "Heals.",
             tags: ["Talent", "Life"],
             sections: []
         },
@@ -445,7 +500,7 @@ module.exports.talents = {
             id: 46,
             chapter: 359,
             title: "Displacement",
-            summary: "A Time-Space-type Talent.",
+            summary: "Allows one to swap places with the target while giving them a debuff.",
             tags: ["Talent", "Time-Space"],
             sections: []
         },
@@ -453,7 +508,7 @@ module.exports.talents = {
             id: 47,
             chapter: 51,
             title: "Self Recovery",
-            summary: "A Life-type Talent.",
+            summary: "Grants great regeneration.",
             tags: ["Talent", "Life"],
             sections: []
         },
@@ -461,7 +516,7 @@ module.exports.talents = {
             id: 48,
             chapter: 648,
             title: "Sea King",
-            summary: "A Summon-type Talent.",
+            summary: "Allows one to command maritime creatures for recon or battle.",
             tags: ["Talent", "Summon"],
             sections: []
         },
@@ -469,7 +524,7 @@ module.exports.talents = {
             id: 49,
             chapter: 151,
             title: "Mindreading",
-            summary: "A Psyche-type Talent.",
+            summary: "Reads mind.",
             tags: ["Talent", "Psyche"],
             sections: []
         },
@@ -477,7 +532,7 @@ module.exports.talents = {
             id: 50,
             chapter: 62,
             title: "Sweet Dream",
-            summary: "A Psyche-type Talent.",
+            summary: "Pulls a target into a dream designed by the user. While in the dream, the user can sense the target's brain waves.",
             tags: ["Talent", "Psyche"],
             sections: []
         },
@@ -485,7 +540,7 @@ module.exports.talents = {
             id: 51,
             chapter: 94,
             title: "Telepathy",
-            summary: "A Psyche-type Talent.",
+            summary: "Allows telepathic communication with other humans.",
             tags: ["Talent", "Psyche"],
             sections: []
         },
@@ -493,7 +548,7 @@ module.exports.talents = {
             id: 52,
             chapter: 662,
             title: "Hedgehog",
-            summary: "A Guard-type Talent.",
+            summary: "Increase physical defense while reflecting 25% of melee physical damage and 10% of ranged physical damage and all other tyeps of damage.",
             tags: ["Talent", "Guard"],
             sections: []
         },
@@ -501,7 +556,7 @@ module.exports.talents = {
             id: 53,
             chapter: 661,
             title: "Decaying Particle",
-            summary: "A Poison-type Talent.",
+            summary: "Unleashes poisonous particles that weaken and kill.",
             tags: ["Talent", "Poison"],
             sections: []
         },
@@ -509,7 +564,7 @@ module.exports.talents = {
             id: 54,
             chapter: 630,
             title: "Beast King",
-            summary: "A Summon-type Talent.",
+            summary: "Communicates with and commands animals.",
             tags: ["Talent", "Summon"],
             sections: []
         },
@@ -517,7 +572,7 @@ module.exports.talents = {
             id: 55,
             chapter: 147,
             title: "Seed of Resentment",
-            summary: "A Psyche-type Talent.",
+            summary: "Induces anger and makes targets fight among themselves through eye contact.",
             tags: ["Talent", "Psyche"],
             sections: []
         },
@@ -525,7 +580,7 @@ module.exports.talents = {
             id: 56,
             chapter: 526,
             title: "Genius",
-            summary: "A Knowledge-type Talent.",
+            summary: "Grants unrivaled intelligence.",
             tags: ["Talent", "Knowledge"],
             sections: []
         },
@@ -533,7 +588,7 @@ module.exports.talents = {
             id: 57,
             chapter: 170,
             title: "Drunken Master",
-            summary: "A Poison-type Talent.",
+            summary: "Causes paralysis through punches.",
             tags: ["Talent", "Poison"],
             sections: []
         },
@@ -541,7 +596,7 @@ module.exports.talents = {
             id: 58,
             chapter: 133,
             title: "Feigned Death",
-            summary: "A Life-type Talent.",
+            summary: "Come back alive some time after apparent death.",
             tags: ["Talent", "Life"],
             sections: []
         },
@@ -549,7 +604,7 @@ module.exports.talents = {
             id: 59,
             chapter: 142,
             title: "Beastly",
-            summary: "A Buff-type Talent.",
+            summary: "Transforms into a beast with increased physical abilities with compromised rationality.",
             tags: ["Talent", "Buff"],
             sections: []
         },
@@ -557,7 +612,7 @@ module.exports.talents = {
             id: 60,
             chapter: 70,
             title: "Jump",
-            summary: "A Buff-type Talent.",
+            summary: "Grants great jumping power.",
             tags: ["Talent", "Buff"],
             sections: []
         },
@@ -565,7 +620,7 @@ module.exports.talents = {
             id: 61,
             chapter: 54,
             title: "Seduction",
-            summary: "A Psyche-type Talent.",
+            summary: "Seduce others, regardless of species.",
             tags: ["Talent", "Psyche"],
             sections: []
         },
@@ -573,7 +628,7 @@ module.exports.talents = {
             id: 62,
             chapter: 170,
             title: "Avian King",
-            summary: "A Summon-type Talent.",
+            summary: "Commands birds.",
             tags: ["Talent", "Summon"],
             sections: []
         },
@@ -581,7 +636,7 @@ module.exports.talents = {
             id: 63,
             chapter: 142,
             title: "Mute",
-            summary: "A Support-type Talent.",
+            summary: "Silences all lifeforms within range and stopes them from using their Talents and abilities.",
             tags: ["Talent", "Support"],
             sections: []
         },
@@ -589,7 +644,7 @@ module.exports.talents = {
             id: 64,
             chapter: 354,
             title: "Insects King",
-            summary: "A Summon-type Talent.",
+            summary: "Commands insects.",
             tags: ["Talent", "Summon"],
             sections: []
         },
@@ -597,7 +652,7 @@ module.exports.talents = {
             id: 65,
             chapter: 435,
             title: "Double",
-            summary: "A Support-type Talent.",
+            summary: "Creates a double with lesser fighting power.",
             tags: ["Talent", "Support"],
             sections: []
         },
@@ -605,7 +660,7 @@ module.exports.talents = {
             id: 66,
             chapter: 68,
             title: "Requiem",
-            summary: "A Psyche-type Talent.",
+            summary: "Voice gains a hypnotic quality that puts others to sleep.",
             tags: ["Talent", "Psyche"],
             sections: []
         },
@@ -613,7 +668,7 @@ module.exports.talents = {
             id: 67,
             chapter: 121,
             title: "Cleansing",
-            summary: "A Miracle-type Talent.",
+            summary: "Prevents and lifts curses.",
             tags: ["Talent", "Miracle"],
             sections: []
         },
@@ -621,7 +676,7 @@ module.exports.talents = {
             id: 68,
             chapter: 142,
             title: "Disorientation",
-            summary: "A Psyche-type Talent.",
+            summary: "Disorients all within a certain range. Does not differentiate between friends and foes.",
             tags: ["Talent", "Psyche"],
             sections: []
         },
@@ -629,7 +684,7 @@ module.exports.talents = {
             id: 69,
             chapter: 102,
             title: "Iron Skin",
-            summary: "A Guard-type Talent.",
+            summary: "Turns one's skin into metal to greatly increase defense.",
             tags: ["Talent", "Guard"],
             sections: []
         },
@@ -637,7 +692,7 @@ module.exports.talents = {
             id: 70,
             chapter: 105,
             title: "Spider Venom",
-            summary: "A Poison-type Talent.",
+            summary: "Secretes spider venom and grants other spider-like abilities, including vision and creating webs.",
             tags: ["Talent", "Poison"],
             sections: []
         },
@@ -645,7 +700,7 @@ module.exports.talents = {
             id: 71,
             chapter: 731,
             title: "Toys",
-            summary: "A Summon-type Talent.",
+            summary: "Turns toys into their real versions with blue energy.",
             tags: ["Talent", "Summon"],
             sections: []
         },
@@ -653,7 +708,7 @@ module.exports.talents = {
             id: 72,
             chapter: 170,
             title: "Mind's Eye",
-            summary: "A Buff-type Talent.",
+            summary: "Takes away vision in exchange for greater senses, reflex, and fighting power. Great for fighting in the dark.",
             tags: ["Talent", "Buff"],
             sections: []
         },
@@ -661,7 +716,7 @@ module.exports.talents = {
             id: 73,
             chapter: 170,
             title: "God of Archery",
-            summary: "A Damage-type Talent.",
+            summary: "Grants mastery over archery.",
             tags: ["Talent", "Damage"],
             sections: []
         },
@@ -669,7 +724,7 @@ module.exports.talents = {
             id: 74,
             chapter: 98,
             title: "Sensory",
-            summary: "A Psyche-type Talent.",
+            summary: "Senses all lifeforms within a certain range and differentiates between humans, awakeners, and monsters.",
             tags: ["Talent", "Psyche"],
             sections: []
         },
@@ -677,7 +732,7 @@ module.exports.talents = {
             id: 75,
             chapter: 629,
             title: "Magic Hair",
-            summary: "A Buff-type Talent.",
+            summary: "Turns hair into sharp, sturdy wires.",
             tags: ["Talent", "Buff"],
             sections: []
         },
@@ -685,7 +740,7 @@ module.exports.talents = {
             id: 76,
             chapter: 354,
             title: "Arm Strength",
-            summary: "A Buff-type Talent.",
+            summary: "Increases arms for greater hurling power and other buffs.",
             tags: ["Talent", "Buff"],
             sections: []
         },
@@ -693,7 +748,7 @@ module.exports.talents = {
             id: 77,
             chapter: 170,
             title: "Condition",
-            summary: "A Support-type Talent.",
+            summary: "Optimizes one's condition.",
             tags: ["Talent", "Support"],
             sections: []
         },
@@ -701,7 +756,7 @@ module.exports.talents = {
             id: 78,
             chapter: 354,
             title: "Explosives Expert",
-            summary: "A Damage-type Talent.",
+            summary: "Grants mastery over all explosive weapons and traps and doubles their power.",
             tags: ["Talent", "Damage"],
             sections: []
         },
@@ -709,7 +764,7 @@ module.exports.talents = {
             id: 79,
             chapter: 620,
             title: "Intangibility",
-            summary: "A Support-type Talent.",
+            summary: "Phases through walls and grounds. Travel fast with only the user's clothes and some personal belongings. Carrying another person or objects slows the user down.",
             tags: ["Talent", "Support"],
             sections: []
         },
@@ -717,7 +772,7 @@ module.exports.talents = {
             id: 80,
             chapter: 360,
             title: "Bee Venom",
-            summary: "A Poison-type Talent.",
+            summary: "Transforms nails into stings that paralyze, cause illusions, poison, or induce madness.",
             tags: ["Talent", "Poison"],
             sections: []
         },
@@ -725,7 +780,7 @@ module.exports.talents = {
             id: 81,
             chapter: 229,
             title: "Psychometry",
-            summary: "A Support-type Talent.",
+            summary: "Sees what has happened to or around an object through touch.",
             tags: ["Talent", "Support"],
             sections: []
         },
@@ -733,7 +788,7 @@ module.exports.talents = {
             id: 82,
             chapter: 511,
             title: "Psychic Armor",
-            summary: "A Psyche-type Talent.",
+            summary: "Grants resistance to psychic damages and helps regulate emotions.",
             tags: ["Talent", "Psyche"],
             sections: []
         },
@@ -741,7 +796,7 @@ module.exports.talents = {
             id: 83,
             chapter: 421,
             title: "Skeleton Key",
-            summary: "A Support-type Talent.",
+            summary: "Opens any regular doors and locks and breaks down regular energy barriers.",
             tags: ["Talent", "Support"],
             sections: []
         },
@@ -749,7 +804,7 @@ module.exports.talents = {
             id: 84,
             chapter: 355,
             title: "Corpse Herder",
-            summary: "A Summon-type Talent.",
+            summary: "Brings a body bag in a berserking mode for three minutes or until it loses its mobility. The corpse cannot use its Talents.",
             tags: ["Talent", "Summon"],
             sections: []
         },
@@ -757,7 +812,7 @@ module.exports.talents = {
             id: 85,
             chapter: 416,
             title: "Blacksmith",
-            summary: "A Knowledge-type Talent.",
+            summary: "Creates equipment with Black Gold.",
             tags: ["Talent", "Knowledge"],
             sections: []
         },
@@ -765,7 +820,7 @@ module.exports.talents = {
             id: 86,
             chapter: 416,
             title: "Pharmacist",
-            summary: "A Knowledge-type Talent.",
+            summary: "Creates special medicines.",
             tags: ["Talent", "Knowledge"],
             sections: []
         },
@@ -773,7 +828,7 @@ module.exports.talents = {
             id: 87,
             chapter: 581,
             title: "Plasticine",
-            summary: "A Life-type Talent.",
+            summary: "Makes the user or a target malleable.",
             tags: ["Talent", "Life"],
             sections: []
         },
@@ -781,7 +836,7 @@ module.exports.talents = {
             id: 88,
             chapter: 643,
             title: "Psychic Blessing",
-            summary: "A Psyche-type Talent.",
+            summary: "Near immunity to illusions.",
             tags: ["Talent", "Psyche"],
             sections: []
         },
@@ -789,7 +844,7 @@ module.exports.talents = {
             id: 89,
             chapter: 417,
             title: "Enchantment",
-            summary: "A Support-type Talent.",
+            summary: "Enchants Black Gold equipment with the energy of other Talents.",
             tags: ["Talent", "Support"],
             sections: []
         },
@@ -797,7 +852,7 @@ module.exports.talents = {
             id: 90,
             chapter: 355,
             title: "Finger Strength",
-            summary: "A Buff-type Talent.",
+            summary: "Shoot powerful projectiles with one's fingers, including coins, cards, other small objects, and even air.",
             tags: ["Talent", "Buff"],
             sections: []
         },
@@ -805,7 +860,7 @@ module.exports.talents = {
             id: 91,
             chapter: 789,
             title: "Bone Growth",
-            summary: "A Buff-type Talent.",
+            summary: "Harden the user's bones. The user may grow and transform bones at will.",
             tags: ["Talent", "Buff"],
             sections: []
         },
@@ -813,7 +868,7 @@ module.exports.talents = {
             id: 92,
             chapter: 630,
             title: "Lion Roar",
-            summary: "A Buff-type Talent.",
+            summary: "Makes powerful sonic attacks.",
             tags: ["Talent", "Buff"],
             sections: []
         },
@@ -821,7 +876,7 @@ module.exports.talents = {
             id: 93,
             chapter: 747,
             title: "Master of Hidden Weapons",
-            summary: "A Damage-type Talent.",
+            summary: "Grants mastery over hidden weapons and small cold weapons. Damage is doubled when initiating an attack. Known as Killing Expert-lite.",
             tags: ["Talent", "Damage"],
             sections: []
         },
@@ -829,7 +884,7 @@ module.exports.talents = {
             id: 94,
             chapter: 356,
             title: "Slow",
-            summary: "A Poison-type Talent.",
+            summary: "Slows those touched by the user's blood.",
             tags: ["Talent", "Poison"],
             sections: []
         },
@@ -837,7 +892,7 @@ module.exports.talents = {
             id: 95,
             chapter: 618,
             title: "Thick Mist",
-            summary: "A Guard-type Talent.",
+            summary: "Creates thick mist.",
             tags: ["Talent", "Guard"],
             sections: []
         },
@@ -845,7 +900,7 @@ module.exports.talents = {
             id: 96,
             chapter: 787,
             title: "Talisman",
-            summary: "An Element-type Talent.",
+            summary: "Manipulates talismans imbued with different powers.",
             tags: ["Talent", "Element"],
             sections: []
         },
@@ -853,7 +908,7 @@ module.exports.talents = {
             id: 97,
             chapter: 849,
             title: "Telekinesis",
-            summary: "A Psyche-type Talent.",
+            summary: "Moves any tangible object.",
             tags: ["Talent", "Psyche"],
             sections: []
         },
@@ -861,7 +916,7 @@ module.exports.talents = {
             id: 98,
             chapter: 571,
             title: "Clairvoyance",
-            summary: "A Buff-type Talent.",
+            summary: "Sees far and through obstacles.",
             tags: ["Talent", "Buff"],
             sections: []
         },
@@ -869,7 +924,7 @@ module.exports.talents = {
             id: 99,
             chapter: 668,
             title: "Chaos Space / Portal",
-            summary: "A Time-Space-type Talent.",
+            summary: "Creates two connected portals for transportation.",
             tags: ["Talent", "Time-Space"],
             sections: []
         },
@@ -877,23 +932,15 @@ module.exports.talents = {
             id: 100,
             chapter: 589,
             title: "Judge",
-            summary: "A Miracle-type Talent.",
+            summary: "Judge anyone inside a passive domain of 50 meters in diameter. Inside, everyone must follow the rules of fairness, but the user may nudge the definition of fairness or even twist it at a price.",
             tags: ["Talent", "Miracle"],
-            sections: []
-        },
-        101: {
-            id: 101,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         102: {
             id: 102,
             chapter: 789,
             title: "Rabies",
-            summary: "A Poison-type Talent.",
+            summary: "Makes the user themselves or someone they bite go berserk, increasing their explosive power at the price of compromising their intelligence. They may even lose their ability to differentiate between friends and foes.",
             tags: ["Talent", "Poison"],
             sections: []
         },
@@ -901,7 +948,7 @@ module.exports.talents = {
             id: 103,
             chapter: 864,
             title: "Dimensional Storage",
-            summary: "A Time-Space-type Talent.",
+            summary: "Creates a subspace that can store things.",
             tags: ["Talent", "Time-Space"],
             sections: []
         },
@@ -909,63 +956,23 @@ module.exports.talents = {
             id: 104,
             chapter: 747,
             title: "Blood Curse",
-            summary: "A Miracle-type Talent.",
+            summary: "Curse others through the user's blood at the price of thier own lifespan.",
             tags: ["Talent", "Miracle"],
-            sections: []
-        },
-        105: {
-            id: 105,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        106: {
-            id: 106,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        107: {
-            id: 107,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        108: {
-            id: 108,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         109: {
             id: 109,
             chapter: 747,
             title: "Substitute",
-            summary: "A Support-type Talent.",
+            summary: "Creates a substitute with a target's hair, nail clippings, blood, and other tissues. The substitutes can last for days, but they cannot do anything other than doing and saying the simple things programmed into them in advance.",
             tags: ["Talent", "Support"],
-            sections: []
-        },
-        110: {
-            id: 110,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         111: {
             id: 111,
             chapter: 515,
             title: "Keen Hearing",
-            summary: "A Buff-type Talent.",
+            summary: "Grants greater hearing.",
             tags: ["Talent", "Buff"],
             sections: []
         },
@@ -973,7 +980,7 @@ module.exports.talents = {
             id: 112,
             chapter: 237,
             title: "Self-Detonate",
-            summary: "An Element-type Talent.",
+            summary: "Detonates parts of the user's own body.",
             tags: ["Talent", "Element"],
             sections: []
         },
@@ -981,103 +988,47 @@ module.exports.talents = {
             id: 113,
             chapter: 747,
             title: "Muscles",
-            summary: "A Buff-type Talent.",
+            summary: "Grants greater muscle strength, endurance, explosive power, and regeneration.",
             tags: ["Talent", "Buff"],
-            sections: []
-        },
-        114: {
-            id: 114,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         115: {
             id: 115,
             chapter: 747,
             title: "Gambler",
-            summary: "A Support-type Talent.",
+            summary: "Starts a gamble with written or spoken words. The bet, whether through coin toss, rock-paper-scissors, or other games, is valid as long as the other party responds in any way. The user has a 55% chance of winning.",
             tags: ["Talent", "Support"],
-            sections: []
-        },
-        116: {
-            id: 116,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        117: {
-            id: 117,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        118: {
-            id: 118,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         119: {
             id: 119,
             chapter: 837,
             title: "Maze",
-            summary: "A Support-type Talent.",
+            summary: "Creates a maze. The scale and complexity depend on the landscapes.",
             tags: ["Talent", "Support"],
-            sections: []
-        },
-        120: {
-            id: 120,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         125: {
             id: 125,
             chapter: 422,
             title: "Tracking",
-            summary: "A Support-type Talent.",
+            summary: "Locates an object as long as the user has touched it.",
             tags: ["Talent", "Support"],
-            sections: []
-        },
-        126: {
-            id: 126,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         127: {
             id: 127,
             chapter: 747,
             title: "Personality Kill",
-            summary: "A Psyche-type Talent.",
+            summary: "Temporarily splits the target's personality to induce discords, thus rendering them immobile or even insane.",
             tags: ["Talent", "Psyche"],
-            sections: []
-        },
-        128: {
-            id: 128,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         129: {
             id: 129,
             chapter: 747,
             title: "Experience Thief",
-            summary: "A Knowledge-type Talent.",
+            summary: "Steals 20% of the target's memories, experience, knowledge, emotions, and Talents, while the target will lose what is stolen temporarily.",
             tags: ["Talent", "Knowledge"],
             sections: []
         },
@@ -1085,7 +1036,7 @@ module.exports.talents = {
             id: 130,
             chapter: 415,
             title: "Memory",
-            summary: "A Knowledge-type Talent.",
+            summary: "Grants photographic memory.",
             tags: ["Talent", "Knowledge"],
             sections: []
         },
@@ -1093,175 +1044,55 @@ module.exports.talents = {
             id: 131,
             chapter: 29,
             title: "Red Eyes",
-            summary: "A Buff-type Talent.",
+            summary: "Allows one to differentiate between humans and monsters based on body temperature.",
             tags: ["Talent", "Buff"],
-            sections: []
-        },
-        132: {
-            id: 132,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        133: {
-            id: 133,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        134: {
-            id: 134,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        135: {
-            id: 135,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        136: {
-            id: 136,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        137: {
-            id: 137,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         138: {
             id: 138,
             chapter: 888,
             title: "Afterimage",
-            summary: "A Time-Space-type Talent.",
+            summary: "Creates an afterimage for a short time.",
             tags: ["Talent", "Time-Space"],
-            sections: []
-        },
-        141: {
-            id: 141,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        142: {
-            id: 142,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         143: {
             id: 143,
             chapter: 361,
             title: "Jeer",
-            summary: "A Support-type Talent.",
+            summary: "Taunts others to draw their attacks and lower their guard.",
             tags: ["Talent", "Support"],
-            sections: []
-        },
-        144: {
-            id: 144,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         145: {
             id: 145,
             chapter: 786,
             title: "Shooter Domain",
-            summary: "A Support-type Talent.",
+            summary: "Double the reach and damage of ranged attacks.",
             tags: ["Talent", "Support"],
-            sections: []
-        },
-        146: {
-            id: 146,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        147: {
-            id: 147,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         148: {
             id: 148,
             chapter: 620,
             title: "Hunter",
-            summary: "A Knowledge-type Talent.",
+            summary: "Grants the ability to set up traps.",
             tags: ["Talent", "Knowledge"],
-            sections: []
-        },
-        149: {
-            id: 149,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         150: {
             id: 150,
             chapter: 238,
             title: "Aptitude",
-            summary: "A Knowledge-type Talent.",
+            summary: "Increases the possibility of acquiring Talents.",
             tags: ["Talent", "Knowledge"],
-            sections: []
-        },
-        151: {
-            id: 151,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        152: {
-            id: 152,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        153: {
-            id: 153,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         154: {
             id: 154,
             chapter: 581,
             title: "Six Senses Judge",
-            summary: "A Support-type Talent.",
+            summary: "Deprive the enemies of two senses while the user and their compainons lose one.",
             tags: ["Talent", "Support"],
             sections: []
         },
@@ -1269,7 +1100,7 @@ module.exports.talents = {
             id: 155,
             chapter: 747,
             title: "Contract",
-            summary: "A Knowledge-type Talent.",
+            summary: "Allows one to create a special contract where the parties must comply with it after signing. The violator will pay a price as great as their life.",
             tags: ["Talent", "Knowledge"],
             sections: []
         },
@@ -1277,71 +1108,23 @@ module.exports.talents = {
             id: 156,
             chapter: 705,
             title: "Dodge",
-            summary: "A Guard-type Talent.",
+            summary: "Grants a 33% chance of dodging an attack perfectly.",
             tags: ["Talent", "Guard"],
-            sections: []
-        },
-        157: {
-            id: 157,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        158: {
-            id: 158,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        159: {
-            id: 159,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        160: {
-            id: 160,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         161: {
             id: 161,
             chapter: 873,
             title: "Bullseye",
-            summary: "A Guard-type Talent.",
+            summary: "Greatly increases defense while drawing ranged, elemental, energy, poison, spatial, and even psychic and spiritual attacks.",
             tags: ["Talent", "Guard"],
-            sections: []
-        },
-        162: {
-            id: 162,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        163: {
-            id: 163,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         164: {
             id: 164,
             chapter: 683,
             title: "Organ Puzzle",
-            summary: "A Life-type Talent.",
+            summary: "Moves internal organs at will with a small boost to their regeneration.",
             tags: ["Talent", "Life"],
             sections: []
         },
@@ -1349,7 +1132,7 @@ module.exports.talents = {
             id: 165,
             chapter: 705,
             title: "Heavy",
-            summary: "A Support-type Talent.",
+            summary: "May a target the user is touching feel mentally and physically heavy.",
             tags: ["Talent", "Support"],
             sections: []
         },
@@ -1357,23 +1140,15 @@ module.exports.talents = {
             id: 166,
             chapter: 848,
             title: "Blocking",
-            summary: "A Guard-type Talent.",
+            summary: "Conceal the energy of all lifeforms in a certain area. Blocking all recon methods outside of direct vision.",
             tags: ["Talent", "Guard"],
-            sections: []
-        },
-        167: {
-            id: 167,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         168: {
             id: 168,
             chapter: 705,
             title: "Sleepless",
-            summary: "A Life-type Talent.",
+            summary: "Loses the need for sleep.",
             tags: ["Talent", "Life"],
             sections: []
         },
@@ -1381,7 +1156,7 @@ module.exports.talents = {
             id: 169,
             chapter: 873,
             title: "Crisis Alert",
-            summary: "A Guard-type Talent.",
+            summary: "Foresees danger and calamity coming for the user in advance by 5 seconds to 1 minute.",
             tags: ["Talent", "Guard"],
             sections: []
         },
@@ -1389,7 +1164,7 @@ module.exports.talents = {
             id: 170,
             chapter: 864,
             title: "Golden Ratio",
-            summary: "A Support-type Talent.",
+            summary: "Sees the lines of golden ratio on a person where damage, healing, and support skills will be amplified.",
             tags: ["Talent", "Support"],
             sections: []
         },
@@ -1397,31 +1172,15 @@ module.exports.talents = {
             id: 171,
             chapter: 787,
             title: "Mental Suggestion",
-            summary: "A Psyche-type Talent.",
+            summary: "Influences friends or foes through suggestion to strengthen the former or weaken the latter.",
             tags: ["Talent", "Psyche"],
-            sections: []
-        },
-        172: {
-            id: 172,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        173: {
-            id: 173,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         174: {
             id: 174,
             chapter: 654,
-            title: "exp",
-            summary: "A Knowledge-type Talent.",
+            title: "Negotiation Expert",
+            summary: "Allows one to negotiate better.",
             tags: ["Talent", "Knowledge"],
             sections: []
         },
@@ -1429,7 +1188,7 @@ module.exports.talents = {
             id: 175,
             chapter: 7,
             title: "Keen Smell",
-            summary: "A Buff-type Talent.",
+            summary: "Allows one to differentiate between humans and monsters through smell.",
             tags: ["Talent", "Buff"],
             sections: []
         },
@@ -1437,71 +1196,23 @@ module.exports.talents = {
             id: 176,
             chapter: 581,
             title: "Praise",
-            summary: "A Support-type Talent.",
+            summary: "Praises companions to give them an overall buff or praises enemies to expose their weakness and make them more prone to make mistakes.",
             tags: ["Talent", "Support"],
-            sections: []
-        },
-        177: {
-            id: 177,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        178: {
-            id: 178,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        179: {
-            id: 179,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        180: {
-            id: 180,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         181: {
             id: 181,
             chapter: 77,
             title: "Lie Detection",
-            summary: "A Knowledge-type Talent.",
+            summary: "Detects intentional lies.",
             tags: ["Talent", "Knowledge"],
-            sections: []
-        },
-        182: {
-            id: 182,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
-            sections: []
-        },
-        183: {
-            id: 183,
-            chapter: null,
-            title: null,
-            summary: "Undiscovered Talent.",
-            tags: ["Talent"],
             sections: []
         },
         184: {
             id: 184,
             chapter: 824,
             title: "Air Man",
-            summary: "A Guard-type Talent.",
+            summary: "Becomes as unnoticeable as air.",
             tags: ["Talent", "Guard"],
             sections: []
         },
@@ -1509,7 +1220,7 @@ module.exports.talents = {
             id: 185,
             chapter: 747,
             title: "Longevity",
-            summary: "A Life-type Talent.",
+            summary: "Extends lifespan and slows aging.",
             tags: ["Talent", "Life"],
             sections: []
         },
@@ -1517,7 +1228,7 @@ module.exports.talents = {
             id: 186,
             chapter: 849,
             title: "Rules of Jianghu",
-            summary: "A Damage-type Talent.",
+            summary: "Force a duel with only hand-to-hand combat until one side is out cold or dead.",
             tags: ["Talent", "Damage"],
             sections: []
         },
@@ -1525,7 +1236,7 @@ module.exports.talents = {
             id: 187,
             chapter: 668,
             title: "Follow Heart",
-            summary: "A Support-type Talent.",
+            summary: "Turns away attention. The user may beg the enemy for mercy to make them lose their murderous intent and arouse their empathy, which can lead to successful escape.",
             tags: ["Talent", "Support"],
             sections: []
         },
@@ -1533,7 +1244,7 @@ module.exports.talents = {
             id: 188,
             chapter: 414,
             title: "Strange",
-            summary: "A Support-type Talent.",
+            summary: "A strange person.",
             tags: ["Talent", "Support"],
             sections: []
         },
@@ -1541,7 +1252,7 @@ module.exports.talents = {
             id: 189,
             chapter: 414,
             title: "Grumpy",
-            summary: "A Damage-type Talent.",
+            summary: "A grumpy person.",
             tags: ["Talent", "Damage"],
             sections: []
         },
@@ -1549,7 +1260,7 @@ module.exports.talents = {
             id: 190,
             chapter: 414,
             title: "Cockroach",
-            summary: "A Life-type Talent.",
+            summary: "A cockroach.",
             tags: ["Talent", "Life"],
             sections: []
         },
@@ -1557,7 +1268,7 @@ module.exports.talents = {
             id: 191,
             chapter: 414,
             title: "Unreachable",
-            summary: "A Guard-type Talent.",
+            summary: "An unreachable person.",
             tags: ["Talent", "Guard"],
             sections: []
         },
@@ -1565,7 +1276,7 @@ module.exports.talents = {
             id: 192,
             chapter: 414,
             title: "Patient",
-            summary: "A Poison-type Talent.",
+            summary: "A patient.",
             tags: ["Talent", "Poison"],
             sections: []
         },
@@ -1573,7 +1284,7 @@ module.exports.talents = {
             id: 193,
             chapter: 414,
             title: "Buy Off",
-            summary: "A Summon-type Talent.",
+            summary: "A charlatan.",
             tags: ["Talent", "Summon"],
             sections: []
         },
@@ -1581,7 +1292,7 @@ module.exports.talents = {
             id: 194,
             chapter: 414,
             title: "Strong",
-            summary: "A Buff-type Talent.",
+            summary: "A strong person.",
             tags: ["Talent", "Buff"],
             sections: []
         },
@@ -1589,7 +1300,7 @@ module.exports.talents = {
             id: 195,
             chapter: 414,
             title: "Flake Out",
-            summary: "A Knowledge-type Talent.",
+            summary: "A person who often flakes out.",
             tags: ["Talent", "Knowledge"],
             sections: []
         },
@@ -1597,7 +1308,7 @@ module.exports.talents = {
             id: 196,
             chapter: 414,
             title: "Firework",
-            summary: "An Element-type Talent.",
+            summary: "A person who loves releasing fireworks.",
             tags: ["Talent", "Element"],
             sections: []
         },
@@ -1605,7 +1316,7 @@ module.exports.talents = {
             id: 197,
             chapter: 414,
             title: "Painter",
-            summary: "A Time-Space-type Talent.",
+            summary: "A person who loves painting.",
             tags: ["Talent", "Time-Space"],
             sections: []
         },
@@ -1613,7 +1324,7 @@ module.exports.talents = {
             id: 198,
             chapter: 413,
             title: "Confidence",
-            summary: "A Psyche-type Talent.",
+            summary: "A confident person.",
             tags: ["Talent", "Psyche"],
             sections: []
         },
@@ -1621,9 +1332,41 @@ module.exports.talents = {
             id: 199,
             chapter: 3,
             title: "Lucky",
-            summary: "A Miracle-type Talent.",
+            summary: "A lucky persons.",
             tags: ["Talent", "Miracle"],
-            sections: []
+            sections: [
+                {
+                    title: "Level 1",
+                    chapter: 3,
+                    content: "Acquires 1 Luck point for every 60 minutes they survive. Luck points may be added to the user's stats."
+                },
+                {
+                    title: "Level 2",
+                    chapter: 15,
+                    content: "Luck points acquisition rate now receives a multiplier according to danger level. Grants access to the Talent Pantheon for comprehending a new Talent."
+                },
+                {
+                    title: "Level 3",
+                    chapter: 166,
+                    content: "Raises stats ceiling to 500. Becoming a Spectator of the Talent Pantheon, allowing the user to see the number of Talents left for each Rune Type and choose the pool they want to comprehend a Talent from."
+                },
+                {
+                    title: "Level 4",
+                    chapter: 386,
+                    content: "Raises stats ceiling to 1000. Grants Willful Power: the user may reallocate all their stats outside of Luck at will, even beyond the stats ceiling. Use Duration: 10 seconds. Cooldown: 48 hours. Price: loses 3% of stats."
+                },
+                {
+                    title: "Level 5",
+                    chapter: 579,
+                    content: "Raises stats ceiling to 2000. Willful Power's use duration increases to 15 seoncds, cooldown decreases to 24 hours, and stats cost lowers to 1%.\
+                    Luck points now accumulate at a 2 points per hour basic rate. Becomes the Honored Guest of the Talent Pantheon; the top and bottom twelve Talents are no longer less likely to be comprehended."
+                },
+                {
+                    title: "Wishing Fountain",
+                    chapter: 700,
+                    content: "Allows user to make a wish with Luck points. Gao Yang acquired Absolute Defense by first spending 1000 Luck points (discounted cost for the first wish) to make a wish before pulling for a Talent."
+                },
+            ]
         }
     }
 };
