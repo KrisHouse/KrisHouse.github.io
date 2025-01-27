@@ -730,30 +730,32 @@ function WikiSpoilerSystem() {
                 darkMode ? 'bg-gray-700' : 'bg-gray-50'
             } ${level > 0 ? 'ml-4 mt-4' : ''}`}
         >
-            <h3 className="font-semibold flex items-center justify-between">
-                <span className={darkMode ? 'text-white' : 'text-gray-900'}>
-                    {section.title}
-                </span>
-                <span className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                    Chapter {section.chapter}
-                </span>
-            </h3>
             {section.chapter <= currentChapter ? (
-                <div>
-                    <p className={`mt-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'} whitespace-pre-wrap`}>
-                        {section.content}
-                    </p>
-                    {section.subsections && section.subsections.length > 0 && (
-                        <div className="space-y-4">
-                            {section.subsections.map(subsection => renderSection(subsection, level + 1))}
-                        </div>
-                    )}
-                </div>
+                <>
+                    <h3 className="font-semibold flex items-center justify-between">
+                        <span className={darkMode ? 'text-white' : 'text-gray-900'}>
+                            {section.title}
+                        </span>
+                        <span className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                            Chapter {section.chapter}
+                        </span>
+                    </h3>
+                    <div>
+                        <p className={`mt-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'} whitespace-pre-wrap`}>
+                            {section.content}
+                        </p>
+                        {section.subsections && section.subsections.length > 0 && (
+                            <div className="space-y-4">
+                                {section.subsections.map(subsection => renderSection(subsection, level + 1))}
+                            </div>
+                        )}
+                    </div>
+                </>
             ) : (
-                <div className={`mt-2 p-4 rounded text-gray-500 italic ${
+                <div className={`p-4 rounded text-gray-500 italic ${
                     darkMode ? 'bg-gray-800' : 'bg-gray-100'
                 }`}>
-                    Content locked (requires Chapter {section.chapter})
+                    Hidden Section (requires Chapter {section.chapter})
                 </div>
             )}
         </div>
