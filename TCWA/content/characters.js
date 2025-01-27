@@ -9,7 +9,7 @@ module.exports.characters = [
             {
                 title: "Background",
                 chapter: 1,
-                content: "Gao Yang, originally an orphan named Liu Li, transmigrated to the world the story takes place at the age of six.\nHis birthday is on 4/1.",
+                content: "Gao Yang, originally an orphan named Liu Li, transmigrated to the world the story takes place at the age of six.",
                 subsections: [] // Simple section without subsections
             },
             {
@@ -24,17 +24,17 @@ module.exports.characters = [
                 content: "Gao Yang's allegiances throughout the story:",
                 subsections: [
                     {
-                        title: "Dark Horse",
+                        title: "Twelve Zodiac Signs",
                         chapter: 66,
                         content: "Gao Yang officially joined the Twelve Zodiac Signs after passing the test. He later picked the codename, Dark Horse."
                     },
                     {
-                        title: "Seven Shadow",
+                        title: "Qilin Guild",
                         chapter: 136,
                         content: "When the Qilin Guild poached Gao Yang, the Zodiacs saw it as a chance to plant an insider. Gao Yang joined the Guild as a Protector with his own team, codenamed Seven Shadow."
                     },
                     {
-                        title: "Gao Yang",
+                        title: "Nine Scions",
                         chapter: 612,
                         content: "Gao Yang started the Nine Scions with members from the Zodiacs, the Qilin Guild, and his personal connections after an unresolvable disagreement with Qilin."
                     }
