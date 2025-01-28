@@ -577,7 +577,7 @@ function WikiSpoilerSystem({ content }) {
             <h1 className={`text-xl sm:text-3xl font-bold ${
                 darkMode ? 'text-white' : 'text-gray-900'
             }`}>
-                TCWA Wiki
+                TCWA Glossary
             </h1>
             <button
                 onClick={handleDarkModeToggle}
