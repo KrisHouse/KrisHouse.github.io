@@ -1,61 +1,75 @@
-# Chapter-Based Story Wiki
+# Chapter-Based Story Wiki System
 
-A web-based wiki system that reveals content based on the reader's progress through chapters, preventing spoilers. Features both light and dark modes, with full search capabilities and mobile responsiveness.
+A dynamic, web-based wiki system designed to prevent spoilers by revealing content based on the reader's chapter progress. Features a modern, responsive interface with both light and dark modes, comprehensive search capabilities, and tag-based filtering.
 
 ## Project Structure
 ```
 story-wiki/
-├── index.html
-├── wiki.js
-└── styles.css
+├── index.html          # Main entry point with React and TailwindCSS setup
+├── wiki.js            # Core wiki system implementation
+├── styles.css         # Additional custom styles
+└── content/           # Content directory
+    ├── characters.js  # Character entries
+    ├── factions.js    # Faction entries
+    ├── talents.js     # Talent system entries
+    ├── mysteries.js   # Mystery/plot point entries
+    ├── locations.js   # Location entries
+    └── items.js       # Item/artifact entries
 ```
 
-## Features Implemented
-- Chapter-based content revelation
-  - Users input their last read chapter
-  - Content automatically filters based on progress
-  - Visual indicators for locked content
+## Core Features
 
-- Category System
-  - Characters
-  - Factions
-  - Abilities/Talents
-  - Mysteries/Plot Points
-  - Locations
-  - Items/Artifacts
+### Progress-Based Content Revelation
+- Chapter-based content filtering
+- Real-time chapter progress updates
+- Visual indicators for locked content
+- Section-level content gating
+- Smooth transitions between revealed and hidden content
 
-- Advanced Search Functionality
-  - Global search across all categories
-  - Category-specific search
-  - Tag-based filtering
-  - Real-time search results
-  - Search through titles, summaries, and content
+### Advanced Search & Navigation
+- Global search across all categories
+- Category-specific search mode
+- Tag-based filtering system
+- Real-time search results
+- Cross-category content discovery
+- Support for complex tag combinations
 
-- User Interface
-  - Dark/Light mode toggle
-  - System theme preference detection
-  - Mobile-responsive design
-  - Clean, modern UI with smooth transitions
-  - Tag-based navigation
-  - Detailed entry views with sections
+### Category Management
+- Characters
+- Factions
+- Talents (with numerical ID system)
+- Mysteries/Plot Points
+- Locations
+- Items/Artifacts
+- Category-specific display formats
 
-- Content Organization
-  - Hierarchical content structure
-  - Tag system for cross-referencing
-  - Chapter-gated sections within entries
-  - Category icons for better visual recognition
+### UI/UX Features
+- Responsive design (mobile and desktop layouts)
+- Dark/light mode with system preference detection
+- Mobile-optimized navigation
+- Loading states and error handling
+- Clean, modern interface with Tailwind CSS
+- Smooth transitions and animations
+- Accessibility considerations
 
-## How It Works
-1. Users input their current chapter progress
-2. Content is filtered based on chapter progress
-3. Users can search and filter content using:
-   - Text search
-   - Tag filters
-   - Category navigation
-4. Content is presented in both list and detailed views
-5. Dark/Light mode adjusts based on user preference
+### Content Organization
+- Hierarchical content structure
+- Rich tag system for cross-referencing
+- Chapter-gated sections within entries
+- Category-specific icons
+- Detailed entry views with progressive disclosure
+- Support for nested content sections
 
-## Data Structure
+## Technical Implementation
+
+### Frontend Framework
+- Built with React 18 (loaded via CDN)
+- Styled with Tailwind CSS
+- No build tools required
+- Uses Babel for JSX transformation
+- Client-side routing and state management
+
+### Data Structure Example
 ```javascript
 {
     categoryName: [
@@ -69,45 +83,64 @@ story-wiki/
                 {
                     title: "Section Title",
                     chapter: 1,
-                    content: "Section content"
+                    content: "Section content",
+                    subsections: [
+                        {
+                            title: "Subsection Title",
+                            chapter: 2,
+                            content: "Subsection content"
+                        }
+                    ]
                 }
             ]
         }
-    ]
+    ],
+    // Special structure for talents
+    talents: {
+        data: {
+            1: { /* talent data */ },
+            2: { /* talent data */ }
+            // ... up to 199
+        }
+    }
 }
 ```
 
-## Technical Details
-- Built with React (loaded via CDN)
-- Styled with Tailwind CSS
-- No build tools required
-- Uses Babel for JSX transformation
+### State Management
+- React hooks for local state
+- Optimized rendering with useMemo and useCallback
+- Responsive layout handling with useEffect
+- Dark mode persistence
+- Search state management
+- Tag filtering state
 
-## Future Enhancements
-1. Data Management
-   - JSON/markdown data file support
-   - Import/export capabilities
-   - Content versioning
+### Performance Optimizations
+- Lazy loading of content modules
+- Memoized search results
+- Efficient tag processing
+- Responsive image loading
+- Optimized re-renders
+- Mobile-specific optimizations
 
-2. Enhanced Features
-   - Timeline view
-   - Character relationship diagrams
-   - Image support
-   - Auto-save reading progress
+## Future Development Roadmap
 
-3. User Accounts
-   - Progress tracking
-   - Bookmarks
-   - Notes and annotations
-   - Multiple reading paths
+### 1. Advanced Features
+- Interactive timeline view
+- Character relationship visualization
+- Progress auto-save system
+- Content statistics and analytics
+- Advanced sorting options
 
-4. Cross-References
-   - Automatic link generation
-   - Related entries suggestions
-   - Context-aware references
+### 2. Content Enhancement
+- Rich text formatting
+- Media embedding
+- Interactive elements
+- Dynamic cross-references
+- Content templating
+- Multi-language support
 
-5. Advanced Visualization
-   - Family trees
-   - Location maps
-   - Event timelines
-   - Power scales
+### 3. Visualization Features
+- Location mapping system
+- Event timeline visualization
+- Relationship graphs
+- Progress tracking visualization
