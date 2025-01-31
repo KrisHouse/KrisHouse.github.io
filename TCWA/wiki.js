@@ -379,7 +379,7 @@ function WikiSpoilerSystem({ content }) {
                         </span>
                     </h3>
                     <div>
-                        <p className={`mt-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'} whitespace-pre-wrap`}>
+                        <p className={`mt-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'} whitespace-pre-line`}>
                             {section.content}
                         </p>
                         {section.subsections && section.subsections.length > 0 && (
