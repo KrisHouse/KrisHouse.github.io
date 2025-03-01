@@ -4,7 +4,7 @@ module.exports.characters = [
         chapter: 1,
         title: "Gao Yang",
         summary: "Our protagonist.",
-        tags: ["protagonist"],
+        tags: ["main cast"],
         sections: [
             {
                 title: "Background",
@@ -108,5 +108,59 @@ module.exports.characters = [
                 ]
             }
         ]
-    }
+    },
+    {
+        id: "xinxin",
+        chapter: 13,
+        title: "Gao Xinxin",
+        summary: "Gao Yang's younger sister.",
+        tags: ["main cast, monsters"],
+        sections: [
+            {
+                title: "Envy",
+                chapter: 1080,
+                content: "Gao Xinxin turned out to be Envy, one of the seven death monsters.",
+                subsections: []
+            }
+        ]
+    },
+    {
+        id: "qingling",
+        chapter: 3,
+        title: "Qing Ling",
+        summary: "Gao Yang's classmate. Turned out to be an awakener and saved Gao Yang.",
+        tags: ["main cast, awakeners"],
+        sections: []
+    },
+    {
+        id: "zikai",
+        chapter: 13,
+        title: "Wang Zikai",
+        summary: "Gao Yang's best friend. Turned out to be a monster.",
+        tags: ["main cast, monsters"],
+        sections: [
+            {
+                title: "Pride",
+                chapter: 1080,
+                content: "Wang Zikai was the strongest of the seven death monster, Pride.",
+                subsections: []
+            }
+        ]
+    },
+    {
+        id: "fatjun",
+        chapter: 11,
+        title: "Han Yingjun",
+        summary: "Nicknamed Fat Jun. An awakener awakened with Talent: Healing.",
+        tags: ["main cast, awakeners"],
+        sections: []
+    },
+    {
+        id: "weiwei",
+        chapter: 2,
+        title: "Li Weiwei",
+        summary: "Gao Yang's childhood friend. She turned out to be a monster and tried to kill Gao Yang.",
+        tags: ["side characters, monsters"],
+        sections: []
+    },
 ];

@@ -1,0 +1,14 @@
+CH 1066: Lucky reaching level 6
+CH 1067: The different forms of Rune Circuits
+CH 1068: Lucky level 6 changes:
+The ceiling of the six stats is now 4000.
+Willful Power still lasts 15 seconds, but the cooldown is decreased to 12 hours with no cost to the stats.
+Luck points now accumulate at 3 points per hour without a bonus.
+He is now the Keeper of Talent Pantheon. Every successful acquisition of a new Talent now has a 30% chance of coming with a bonus Talent.
+CH 1069: Life Bank: The skill can freely store and convert the energy, Talent, and even lifespan of multiple higher lifeforms
+CH 1083: the seven death monsters
+CH 1089: Gluttonous Snake, Zero Probability
+CH 1096: level 8 Painter - Chessboard of Causality
+CH 1109: Wang Shu's Domain of Night
+CH 1110: level 7 Killing Expert - Eye for an Eye
+CH 1142: Magic, serial number 120, Miracle-type. Allows the use of magic.

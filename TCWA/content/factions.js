@@ -4,7 +4,7 @@ module.exports.factions = [
         chapter: 32,
         title: "Twelve Zodiac Signs",
         summary: "The Twelve Zodiac Signs consists of a small number of awakeners. The members' codenames follow the theme of the Chinese Zodiac Signs: Mouse, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Lamb, Monkey, Rooster, Dog, and Pig.",
-        tags: ["awakener", "faction"],
+        tags: ["awakeners", "faction"],
         sections: [
             {
                 title: "History",
@@ -29,7 +29,7 @@ module.exports.factions = [
         chapter: 75,
         title: "The Qilin Guild",
         summary: "Led by Qilin, the Qilin Guild is the dominating organization with the greatest influence in the world of awakeners.",
-        tags: ["awakener", "faction"],
+        tags: ["awakeners", "faction"],
         sections: [
             {
                 title: "Organization Framework",
@@ -55,7 +55,7 @@ module.exports.factions = [
         chapter: 78,
         title: "The Hundred Rivers Union",
         summary: "Led by Surnamed Li, the Hundred Rivers Union consists of more than a hundred awakeners, most of whom have weaker Talents.",
-        tags: ["awakener", "faction"],
+        tags: ["awakeners", "faction"],
         sections: [
             {
                 title: "Reorganization after the Nine Scions Formed",
@@ -77,7 +77,7 @@ module.exports.factions = [
         chapter: 612,
         title: "The Nine Scions",
         summary: "After breaking away from the Qilin Guild, Gao Yang started the Nine Scions.",
-        tags: ["awakener", "faction"],
+        tags: ["awakeners", "faction"],
         sections: [
             {
                 title: "Founding Members",

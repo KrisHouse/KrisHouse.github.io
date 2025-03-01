@@ -84,25 +84,25 @@ module.exports.mysteries = [
     },
     {
         id: "wrathMonsters",
-        chapter: 30,
+        chapter: 13,
         title: "Wrath Monsters",
         summary: "Monsters that actively attack humans once waking up. Stronger than wanderers.",
         tags: ["monsters, worldbuilding"],
         sections: [
             {
                 title: "Slaughterers",
-                chapter: 30,
+                chapter: 13,
                 content: "The most offensive ones. Many take the forms of lizardpeople, but there are some resembling wolves and other animals as well. They generally can't be reasoned with, and will go after the awakeners once triggered."
             },
             {
                 title: "Devourers",
-                chapter: 30,
+                chapter: 13,
                 content: "Attack awakeners actively too, and their tentacles are their trademark."
             },
             {
                 title: "Summoners",
-                chapter: 30,
-                content: "Seem to be the most special type of wrath monsters. They can summon their fellow monsters and trigger their transformation within a certain range, and they seem to retain their ability to think once transformed. Dragon thus have come up with three questions to ask the summoners before killing them."
+                chapter: 13,
+                content: "Seem to be the most special type of wrath monsters. They can summon their fellow monsters and trigger their transformation within a certain range, and they seem to retain their ability to think once transformed."
             }
         ]
     },
