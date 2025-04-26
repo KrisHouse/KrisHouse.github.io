@@ -960,12 +960,52 @@ module.exports.talents = {
             tags: ["Talent", "Miracle"],
             sections: []
         },
+        105: {
+            id: 105,
+            chapter: 1151,
+            title: "Animals",
+            summary: "Allows one to turn into an animal. Long-term use may lead to the transformation beceoming irreversible.",
+            tags: ["Talent", "Life"],
+            sections: []
+        },
+        106: {
+            id: 106,
+            chapter: 1150,
+            title: "Consciousness Exchange",
+            summary: "Allows the user to communicate with a target’s consciousness in an abstract manner, even swapping consciousness in a short time.",
+            tags: ["Talent", "Psyche"],
+            sections: []
+        },
+        107: {
+            id: 107,
+            chapter: 1150,
+            title: "Blood Fighter",
+            summary: "Allows the user to fight with their own blood. The offensive power was formidable, but the loss of blood could be fatal despite the enhanced rate of blood generation.",
+            tags: ["Talent", "Buff"],
+            sections: []
+        },
+        108: {
+            id: 108,
+            chapter: 1149,
+            title: "Mitosis",
+            summary: "Allows one to split into at most seven smaller individuals with power divided between them. Each individual has the autonomy to act on their own.",
+            tags: ["Talent", "Life"],
+            sections: []
+        },
         109: {
             id: 109,
             chapter: 747,
             title: "Substitute",
             summary: "Creates a substitute with a target's hair, nail clippings, blood, and other tissues. The substitutes can last for days, but they cannot do anything other than doing and saying the simple things programmed into them in advance.",
             tags: ["Talent", "Support"],
+            sections: []
+        },
+        110: {
+            id: 110,
+            chapter: 1154,
+            title: "NPC",
+            summary: "Allows one to transform and become a certain role or a certain person temporary.",
+            tags: ["Talent", "Miracle"],
             sections: []
         },
         111: {
@@ -992,12 +1032,44 @@ module.exports.talents = {
             tags: ["Talent", "Buff"],
             sections: []
         },
+        114: {
+            id: 114,
+            chapter: 1150,
+            title: "Out-of-Body",
+            summary: "Allows the user’s soul to leave their body for a period of time and attack another’s soul.",
+            tags: ["Talent", "Life"],
+            sections: []
+        },
         115: {
             id: 115,
             chapter: 747,
             title: "Gambler",
             summary: "Starts a gamble with written or spoken words. The bet, whether through coin toss, rock-paper-scissors, or other games, is valid as long as the other party responds in any way. The user has a 55% chance of winning.",
             tags: ["Talent", "Support"],
+            sections: []
+        },
+        116: {
+            id: 116,
+            chapter: 1150,
+            title: "Strongman",
+            summary: "It makes the Talent user unnaturally strong in the short term.",
+            tags: ["Talent", "Buff"],
+            sections: []
+        },
+        117: {
+            id: 117,
+            chapter: 1150,
+            title: "Gourmet",
+            summary: "Not known yet",
+            tags: ["Talent"],
+            sections: []
+        },
+        118: {
+            id: 118,
+            chapter: 1150,
+            title: "Chimera",
+            summary: "Not known yet",
+            tags: ["Talent"],
             sections: []
         },
         119: {
@@ -1008,6 +1080,46 @@ module.exports.talents = {
             tags: ["Talent", "Support"],
             sections: []
         },
+        120: {
+            id: 120,
+            chapter: 1142,
+            title: "Magic",
+            summary: "Allows one to use simple magic, but with a high failure rate.",
+            tags: ["Talent", "Miracle"],
+            sections: []
+        },
+        121: {
+            id: 121,
+            chapter: 1150,
+            title: "Psychiatrist",
+            summary: "Can treat mental illnesses, but also amplify and worsen them.",
+            tags: ["Talent", "Psyche"],
+            sections: []
+        },
+        122: {
+            id: 122,
+            chapter: 1147,
+            title: "Pro Gamer",
+            summary: "Grants expert knowledge in playing all kinds of games.",
+            tags: ["Talent", "Support"],
+            sections: []
+        },
+        123: {
+            id: 123,
+            chapter: 1149,
+            title: "First-person",
+            summary: "Allows one to temporarily share the target’s six senses and thoughts through physical contact, entering their first-person point of view.",
+            tags: ["Talent", "Psyche"],
+            sections: []
+        },
+        124: {
+            id: 124,
+            chapter: 1146,
+            title: "Damage Roulette",
+            summary: "Allows one to amplify or suppress the damage done to the user or someone else, as well as shift the damage to different parts of the body. But fatal damage and special damage are exceptions.",
+            tags: ["Talent", "Damage"],
+            sections: []
+        },
         125: {
             id: 125,
             chapter: 422,
@@ -1016,12 +1128,28 @@ module.exports.talents = {
             tags: ["Talent", "Support"],
             sections: []
         },
+        126: {
+            id: 126,
+            chapter: 1148,
+            title: "Divination",
+            summary: "Forecasts another’s fortune with an accuracy of 70%, but the Talent user couldn’t tell their own fortune.",
+            tags: ["Talent", "Knowledge"],
+            sections: []
+        },
         127: {
             id: 127,
             chapter: 747,
             title: "Personality Kill",
             summary: "Temporarily splits the target's personality to induce discords, thus rendering them immobile or even insane.",
             tags: ["Talent", "Psyche"],
+            sections: []
+        },
+        128: {
+            id: 128,
+            chapter: 1148,
+            title: "Object Duplicate",
+            summary: "Duplicates any object once for a short time with an effectiveness of 30% to 60%. The more complex the object, the greater the failure rate. With a special item, only its appearance would be duplicated, not the essence.",
+            tags: ["Talent", "Support"],
             sections: []
         },
         129: {
@@ -1048,12 +1176,92 @@ module.exports.talents = {
             tags: ["Talent", "Buff"],
             sections: []
         },
+        132: {
+            id: 132,
+            chapter: 1149,
+            title: "Psychic Corruption",
+            summary: "Creates a poison for the target’s mind. While the poison won't be fatal, it will lead to various negative effects, possibly driving the target to madness.",
+            tags: ["Talent", "Poison"],
+            sections: []
+        },
+        133: {
+            id: 133,
+            chapter: 1148,
+            title: "Feng Shui",
+            summary: "Grants mastery over feng shui so that the user could set up formation beforehand, contributing to a siege battle or an ambush.",
+            tags: ["Talent", "Knowledge"],
+            sections: []
+        },
+        134: {
+            id: 134,
+            chapter: 1150,
+            title: "Hypnosis",
+            summary: "Not yet known",
+            tags: ["Talent"],
+            sections: []
+        },
+        135: {
+            id: 135,
+            chapter: 1147,
+            title: "Mutate",
+            summary: "Allows the user to mutate their body, energy, and Talents for a short time for unexpected effects, which can be good or bad, strong or weak, and excessive uses can lead to irreversible effects or death.",
+            tags: ["Talent", "Life"],
+            sections: []
+        },
+        136: {
+            id: 136,
+            chapter: 1150,
+            title: "Magic Tricks",
+            summary: "Not yet known",
+            tags: ["Talent"],
+            sections: []
+        },
+        137: {
+            id: 137,
+            chapter: 1150,
+            title: "Simplify",
+            summary: "Not yet known",
+            tags: ["Talent"],
+            sections: []
+        },
         138: {
             id: 138,
             chapter: 888,
             title: "Afterimage",
             summary: "Creates an afterimage for a short time.",
             tags: ["Talent", "Time-Space"],
+            sections: []
+        },
+        139: {
+            id: 139,
+            chapter: 1145,
+            title: "Elemental Conversion",
+            summary: "Converts any existing element into another, but it doesn't allow the user to control the converted element.",
+            tags: ["Talent", "Element"],
+            sections: []
+        },
+        140: {
+            id: 140,
+            chapter: 1146,
+            title: "Possession",
+            summary: "Allows the user to possess anything and manipulate it. If targeting a creature, the more advanced the lifeform, the greater the chance of failure. The Talent works best on inanimate objects.",
+            tags: ["Talent", "Summon"],
+            sections: []
+        },
+        141: {
+            id: 141,
+            chapter: 1148,
+            title: "Healthy",
+            summary: "The Talent user will never fall ill unless they actively self-destruct.",
+            tags: ["Talent", "Life"],
+            sections: []
+        },
+        142: {
+            id: 142,
+            chapter: 1154,
+            title: "Actor",
+            summary: "Grants masterful acting.",
+            tags: ["Talent", "Support"],
             sections: []
         },
         143: {
@@ -1064,12 +1272,36 @@ module.exports.talents = {
             tags: ["Talent", "Support"],
             sections: []
         },
+        144: {
+            id: 144,
+            chapter: 1150,
+            title: "Mud Man",
+            summary: "",
+            tags: ["Talent"],
+            sections: []
+        },
         145: {
             id: 145,
             chapter: 786,
             title: "Shooter Domain",
             summary: "Double the reach and damage of ranged attacks.",
             tags: ["Talent", "Support"],
+            sections: []
+        },
+        146: {
+            id: 146,
+            chapter: 1150,
+            title: "Empty Man",
+            summary: "",
+            tags: ["Talent"],
+            sections: []
+        },
+        147: {
+            id: 147,
+            chapter: 1147,
+            title: "Inorganic",
+            summary: "Allows the user to become inorganic for immunity to all poisons, also granting a small defense buff to other damages.",
+            tags: ["Talent", "Life"],
             sections: []
         },
         148: {
@@ -1080,12 +1312,44 @@ module.exports.talents = {
             tags: ["Talent", "Knowledge"],
             sections: []
         },
+        149: {
+            id: 149,
+            chapter: 1147,
+            title: "Beginner's Luck",
+            summary: "When the Talent is activated, the user will be granted luck for a short time at the price of some of their abilities, knowledge, and experience reverting to a blank state, making them a literal beginner.",
+            tags: ["Talent", "Miracle"],
+            sections: []
+        },
         150: {
             id: 150,
             chapter: 238,
             title: "Aptitude",
             summary: "Increases the possibility of acquiring Talents.",
             tags: ["Talent", "Knowledge"],
+            sections: []
+        },
+        151: {
+            id: 151,
+            chapter: 1149,
+            title: "Sensory Disturbance",
+            summary: "Targets one’s six senses and caused overstimulation, disorientation, synesthesia, cognitive dissonance, or cognitive impairment.",
+            tags: ["Talent", "Psyche"],
+            sections: []
+        },
+        152: {
+            id: 152,
+            chapter: 1150,
+            title: "Singer",
+            summary: "",
+            tags: ["Talent"],
+            sections: []
+        },
+        153: {
+            id: 153,
+            chapter: 1148,
+            title: "Dancer",
+            summary: "Grants mastery over all dances, which could be incorporated into fights to enhance one’s explosive power, agility, and mental fortitude.",
+            tags: ["Talent", "Buff"],
             sections: []
         },
         154: {
@@ -1112,12 +1376,60 @@ module.exports.talents = {
             tags: ["Talent", "Guard"],
             sections: []
         },
+        157: {
+            id: 157,
+            chapter: 1150,
+            title: "Theft",
+            summary: "",
+            tags: ["Talent"],
+            sections: []
+        },
+        158: {
+            id: 158,
+            chapter: 1148,
+            title: "Deception",
+            summary: "Allows the user to deceive the target in speech, action, visual, or concept. Once it succeeds, damage will be done to the target, the degree of which depends on the deception and how much the target fell for it. A grand deception, if pulled off perfectly, can even kill the target.",
+            tags: ["Talent", "Knowledge"],
+            sections: []
+        },
+        159: {
+            id: 159,
+            chapter: 1149,
+            title: "Word Game",
+            summary: "A rule-based Talent allowing one to disturb, restrict, and debuff a target by twisting words or speech around, such as taking something out of context or purposeful misinterpretation.",
+            tags: ["Talent", "Support"],
+            sections: []
+        },
+        160: {
+            id: 160,
+            chapter: 1150,
+            title: "Decoding",
+            summary: "Breaks all types of codes and grants a talent for translating between different languages.",
+            tags: ["Talent", "Knowledge"],
+            sections: []
+        },
         161: {
             id: 161,
             chapter: 873,
             title: "Bullseye",
             summary: "Greatly increases defense while drawing ranged, elemental, energy, poison, spatial, and even psychic and spiritual attacks.",
             tags: ["Talent", "Guard"],
+            sections: []
+        },
+        162: {
+            id: 162,
+            chapter: 1150,
+            title: "God of Vehicles",
+            summary: "Grants mastery over all vehicles and a small buff to the user when driving.",
+            tags: ["Talent", "Support"],
+            sections: []
+        },
+        163: {
+            id: 163,
+            chapter: 1149,
+            title: "Nagging",
+            summary: "Influences the user and all those around them through nonstop talking, but the influence could be good or bad.",
+            tags: ["Talent", "Support"],
             sections: []
         },
         164: {
@@ -1142,6 +1454,14 @@ module.exports.talents = {
             title: "Blocking",
             summary: "Conceal the energy of all lifeforms in a certain area. Blocking all recon methods outside of direct vision.",
             tags: ["Talent", "Guard"],
+            sections: []
+        },
+        167: {
+            id: 167,
+            chapter: 1149,
+            title: "Compulsion",
+            summary: "Influences the target’s mind and made them fixate on a thought or a thing..",
+            tags: ["Talent", "Psyche"],
             sections: []
         },
         168: {
@@ -1176,6 +1496,22 @@ module.exports.talents = {
             tags: ["Talent", "Psyche"],
             sections: []
         },
+        172: {
+            id: 172,
+            chapter: 1149,
+            title: "Intel",
+            summary: "Allows one to extract the most useful information out of a mess of information, as well as accurately identify true intelligence out of a mix of facts and lies.",
+            tags: ["Talent", "Knowledge"],
+            sections: []
+        },
+        173: {
+            id: 173,
+            chapter: 1147,
+            title: "Fasting",
+            summary: "Allows the user to enter a resting state and store energy so that they could survive with no food or water for a long period.",
+            tags: ["Talent", "Life"],
+            sections: []
+        },
         174: {
             id: 174,
             chapter: 654,
@@ -1200,11 +1536,59 @@ module.exports.talents = {
             tags: ["Talent", "Support"],
             sections: []
         },
+        177: {
+            id: 177,
+            chapter: 1144,
+            title: "Default",
+            summary: "Grants slightly better physique. When the owner acquires their second Talent, they could reach level 4 without the corresponding Rune Circuit, and the second Talent would come with a 30% permanent buff.",
+            tags: ["Talent", "Buff"],
+            sections: []
+        },
+        178: {
+            id: 178,
+            chapter: 1148,
+            title: "Cheating",
+            summary: "Provided enough time, the Talent user would be able to find a loophole in any trap, crisis, or scheme, thus overcoming it or gaining an unexpected edge; however, there was a small chance that things could get worse and more dangerous.",
+            tags: ["Talent", "Miracle"],
+            sections: []
+        },
+        179: {
+            id: 179,
+            chapter: 1148,
+            title: "Time Disturbance",
+            summary: "Confuses the target’s perception of the passage of time and other perceptions, but with a low chance of success.",
+            tags: ["Talent", "Time-Space"],
+            sections: []
+        },
+        180: {
+            id: 180,
+            chapter: 1145,
+            title: "Training",
+            summary: "Allows the user to improve their physique and energy without a limit provided they continued to train, only the progress would be glacial.",
+            tags: ["Talent", "Buff"],
+            sections: []
+        },
         181: {
             id: 181,
             chapter: 77,
             title: "Lie Detection",
             summary: "Detects intentional lies.",
+            tags: ["Talent", "Knowledge"],
+            sections: []
+        },
+        182: {
+            id: 182,
+            chapter: 1148,
+            title: "Listener",
+            summary: "The Talent user’s mere presence encourages others to spill their secrets. It's a perfect ability for intelligence work.",
+            tags: ["Talent", "Psyche"],
+            sections: []
+        },
+        183: {
+            id: 183,
+            chapter: 1149,
+            title: "Billionaire",
+            summary: "Grants great business sense and allows one to earn a great fortune no matter what business they go into..",
             tags: ["Talent", "Knowledge"],
             sections: []
         },
