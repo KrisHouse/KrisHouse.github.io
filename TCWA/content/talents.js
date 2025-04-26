@@ -936,6 +936,14 @@ module.exports.talents = {
             tags: ["Talent", "Miracle"],
             sections: []
         },
+        101: {
+            id: 101,
+            chapter: 1146,
+            title: "Crisis Aversion",
+            summary: "Could mitigate a crisis for the Talent user or another target. No matter how great the damage was, it wouldn’t destroy or kill the target. Worst, they would be on the brink of death—without treatment, though, the target might still die. And the Talent could only be used once every three days.",
+            tags: ["Talent", "Guard"],
+            sections: []
+        },
         102: {
             id: 102,
             chapter: 789,
