@@ -8,7 +8,7 @@
   const SVGNS = "http://www.w3.org/2000/svg";
   const VB_W = 1000, VB_H = 860;
   // Label anchors that fall off-frame (huge nations) get a manual override.
-  const LABEL_OVERRIDE = { "Rus Federation": [752, 232] };
+  const LABEL_OVERRIDE = { "Rus Federation": [752, 232], "Erland": [112, 320] };
 
   function biggestPoly(geom) {
     if (geom.type === "Polygon") return geom;
@@ -178,15 +178,17 @@
       g.appendChild(p);
       pathEls[name] = p;
 
+      if (isUnrevealed) return;
+
       const [lx, ly] = geom.labels[name];
       const t = document.createElementNS(SVGNS, "text");
       t.setAttribute("x", lx); t.setAttribute("y", ly);
       t.setAttribute("class", "cl-label");
       t.style.setProperty("fill", v.ink);
       t.style.setProperty("stroke", v.inkHalo);
-      t.style.setProperty("stroke-width", "2px");
+      t.style.setProperty("stroke-width", "4px");
       t.style.setProperty("paint-order", "stroke");
-      t.style.fontFamily = theme.font;
+      t.style.fontFamily = "'Archivo', system-ui, sans-serif";
       t.style.textTransform = theme.label.transform;
       t.style.letterSpacing = theme.label.spacing;
       t.style.fontWeight = theme.label.weight;

@@ -40,8 +40,9 @@ body{
 .cl-emp.dim{ opacity:.28; filter:saturate(.5); }
 
 .cl-labels .cl-label{
-  font-family:var(--font); font-size:calc(19px * var(--labelScale, 1));
+  font-family:'Archivo', system-ui, sans-serif; font-size:calc(28px * var(--labelScale, 1));
   text-anchor:middle; pointer-events:none; stroke-linejoin:round;
+  stroke-width:3px;
 }
 .cl-map.labels-on .cl-label{ opacity:1; }
 
